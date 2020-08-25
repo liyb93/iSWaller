@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="iSRootController" customModule="iSWaller_Mac" customModuleProvider="target">
+            <connections>
+                <outlet property="containView" destination="cRX-bd-MhN" id="WLL-LP-kyV"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="550"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="cRX-bd-MhN">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="550"/>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="cRX-bd-MhN" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="006-Dq-Gx7"/>
+                <constraint firstAttribute="trailing" secondItem="cRX-bd-MhN" secondAttribute="trailing" id="Q7V-iS-2Uf"/>
+                <constraint firstAttribute="bottom" secondItem="cRX-bd-MhN" secondAttribute="bottom" id="grS-s3-4mC"/>
+                <constraint firstItem="cRX-bd-MhN" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="rCN-k2-Iqt"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="154"/>
+        </customView>
+    </objects>
+</document>

@@ -1,0 +1,60 @@
+/*
+  Localizable.strings
+  iSWaller
+
+  Created by liyb on 2020/7/20.
+  Copyright © 2020 liyb. All rights reserved.
+*/
+
+"iSSetWallpaper" = "Set wallpaper";
+"iSSearchPlacholder" = "keyword search";
+"iSSearchTitle" = "Search";
+"iSDownloadAntiElection" = "Inverse";
+"iSDownloadDelete" = "Delete";
+"iSDownloadTitle" = "Download";
+"iSDownloadSelectAll" = "Check in";
+"iSDownloadCancel" = "Cancel";
+"iSSettingChange" = "Change";
+"iSSettingTitle" = "Setting";
+"iSSettingAbout" = "About us";
+"iSSettingStartup" = "Auto start at boot";
+"iSSettingUnite" = "Multi-screen unified";
+"iSSettingNotification" = "Change wallpaper notification";
+"iSSettingAutoChange" = "Automatic switching (local)";
+"iSSettingPreview" = "Preview quality";
+"iSSettingSavePath" = "Storage path";
+"iSSettingHotKey" = "Hot key";
+"iSSettingCleanCache" = "Clear cache";
+"iSSettingCleaning" = "Cleaning up...";
+"iSSettingPrevious" = "Previous";
+"iSSettingNext" = "Next";
+"iSAboutTitle" = "About us";
+
+"iSAboutDesc" = "iSWaller has thousands of high-definition wallpapers, bringing you a brand new artistic experience every day.
+
+Features：
+-Automatic wallpaper change：15 minutes, 30 minutes, 45 minutes, 1 hour, 2 hours, 1 day, etc.
+-Search：Support fuzzy/precise search to quickly find your favorite wallpaper.
+-Shortcut key：switch the wallpaper you don't like.
+-Preview wallpaper quality switch：the network is not good, switch the picture preview quality.
+-Download history：record used wallpapers to prevent accidental deletion of favorite wallpapers.
+
+Use iSWaller to keep your Mac desktop fresh!";
+
+"iSChangeWallpaperSuccess" = "Wallpaper switch successfully";
+"iSChangeWallpaperError" = "Wallpaper switch failed";
+
+"iSAutoTimeOff" = "off";
+"iSAutoTime15" = "15 minute";
+"iSAutoTime30" = "30 minute";
+"iSAutoTime45" = "45 minute";
+"iSAutoTime60" = "1 hour";
+"iSAutoTime120" = "2 hour";
+"iSAutoTime1" = "1 day";
+"iSPreviewQuilatySmall" = "small";
+"iSPreviewQuilatyMedium" = "medium";
+"iSPreviewQuilatyFull" = "full";
+
+"iSNetworkFailed" = "No data requested, please try again later";
+"iSNoMoreData" = "No more data";
+"iSDownloadError" = "Download failed";

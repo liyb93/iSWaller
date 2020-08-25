@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="iSDownloadController" customModule="iSWaller_Mac" customModuleProvider="target">
+            <connections>
+                <outlet property="clipView" destination="myo-ra-bhs" id="Wqv-B6-pmv"/>
+                <outlet property="collectionView" destination="CXu-BV-uAE" id="nKB-KR-swj"/>
+                <outlet property="navigationBar" destination="MUe-jq-Dl2" id="tpk-gM-uxi"/>
+                <outlet property="progressView" destination="RbO-aO-Gd6" id="UY0-6k-kIP"/>
+                <outlet property="scrollView" destination="bwf-ei-sfa" id="Yxn-My-Dke"/>
+                <outlet property="selectView" destination="4LF-em-rKh" id="bg0-nP-LNM"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="530"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="MUe-jq-Dl2" customClass="iSNavigationBar" customModule="iSWaller_Mac" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="490" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="qJN-FQ-htj"/>
+                    </constraints>
+                </customView>
+                <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwf-ei-sfa">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="490"/>
+                    <clipView key="contentView" id="myo-ra-bhs">
+                        <rect key="frame" x="1" y="1" width="298" height="488"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView id="CXu-BV-uAE">
+                                <rect key="frame" x="0.0" y="0.0" width="298" height="488"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" id="5vq-kQ-7vC">
+                                    <size key="itemSize" width="50" height="50"/>
+                                </collectionViewFlowLayout>
+                                <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="-2" id="RLt-xQ-Mkf"/>
+                                    <outlet property="delegate" destination="-2" id="3sU-Ib-UQT"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="b8U-5O-Pzb">
+                        <rect key="frame" x="-100" y="-100" width="274" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="gU0-1f-bgh">
+                        <rect key="frame" x="234" y="1" width="15" height="143"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+                <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4LF-em-rKh" customClass="iSDownloadSelectView" customModule="iSWaller_Mac" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="I9T-Dr-jk1"/>
+                    </constraints>
+                </customView>
+                <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RbO-aO-Gd6" customClass="iSDownloadProgressView" customModule="iSWaller_Mac" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="kXd-wV-br4"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="MUe-jq-Dl2" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="1NB-LZ-GkX"/>
+                <constraint firstItem="4LF-em-rKh" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="8XB-my-PYB"/>
+                <constraint firstAttribute="bottom" secondItem="RbO-aO-Gd6" secondAttribute="bottom" id="Iae-En-otI"/>
+                <constraint firstAttribute="trailing" secondItem="RbO-aO-Gd6" secondAttribute="trailing" id="Ik6-C2-5hY"/>
+                <constraint firstAttribute="bottom" secondItem="bwf-ei-sfa" secondAttribute="bottom" id="S8p-FB-FWz"/>
+                <constraint firstItem="bwf-ei-sfa" firstAttribute="top" secondItem="MUe-jq-Dl2" secondAttribute="bottom" id="eCN-s5-3s4"/>
+                <constraint firstItem="RbO-aO-Gd6" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="h2s-zp-1na"/>
+                <constraint firstAttribute="trailing" secondItem="4LF-em-rKh" secondAttribute="trailing" id="lrJ-Gb-EsD"/>
+                <constraint firstItem="MUe-jq-Dl2" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="qJr-5J-mf8"/>
+                <constraint firstItem="bwf-ei-sfa" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="rsU-V9-zpF"/>
+                <constraint firstAttribute="trailing" secondItem="MUe-jq-Dl2" secondAttribute="trailing" id="uXi-og-fyy"/>
+                <constraint firstAttribute="bottom" secondItem="4LF-em-rKh" secondAttribute="bottom" id="w3T-iu-poe"/>
+                <constraint firstAttribute="trailing" secondItem="bwf-ei-sfa" secondAttribute="trailing" id="yse-Wb-hli"/>
+            </constraints>
+            <point key="canvasLocation" x="54" y="268"/>
+        </customView>
+    </objects>
+</document>

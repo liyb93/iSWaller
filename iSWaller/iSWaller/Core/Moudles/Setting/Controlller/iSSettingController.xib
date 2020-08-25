@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="iSSettingController" customModule="iSWaller" customModuleProvider="target">
+            <connections>
+                <outlet property="aboutButton" destination="W2Z-ri-I9e" id="Xkk-kL-vGD"/>
+                <outlet property="clipView" destination="7j7-l1-OUg" id="svR-6t-zco"/>
+                <outlet property="collectionView" destination="yPL-kA-MYA" id="D4c-Ft-W7D"/>
+                <outlet property="horizontalLineView" destination="ODU-Vl-D0i" id="nty-9a-ks6"/>
+                <outlet property="navigationBar" destination="PIb-U6-bwQ" id="Rhl-Ly-fQc"/>
+                <outlet property="scrollView" destination="Wfh-Oo-uwV" id="V3H-AL-D4F"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="530"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="PIb-U6-bwQ" customClass="iSNavigationBar" customModule="iSWaller" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="490" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="18P-St-b8i"/>
+                    </constraints>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="XUh-YR-ahz">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                    <subviews>
+                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="ODU-Vl-D0i">
+                            <rect key="frame" x="0.0" y="40" width="300" height="0.0"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="Q8F-1x-CYy"/>
+                            </constraints>
+                        </customView>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W2Z-ri-I9e">
+                            <rect key="frame" x="0.0" y="-1" width="300" height="41"/>
+                            <buttonCell key="cell" type="recessed" title="关于我们" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pgo-ku-ExI">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="systemBold" size="12"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="aboutDidClickAction:" target="-2" id="MDi-s2-HHU"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="LsX-bZ-lQE"/>
+                        <constraint firstAttribute="trailing" secondItem="W2Z-ri-I9e" secondAttribute="trailing" id="Qty-8V-uTg"/>
+                        <constraint firstAttribute="trailing" secondItem="ODU-Vl-D0i" secondAttribute="trailing" id="bNs-Oo-kAe"/>
+                        <constraint firstItem="ODU-Vl-D0i" firstAttribute="leading" secondItem="XUh-YR-ahz" secondAttribute="leading" id="cvu-qf-ejS"/>
+                        <constraint firstItem="W2Z-ri-I9e" firstAttribute="leading" secondItem="XUh-YR-ahz" secondAttribute="leading" id="fJM-RI-v3Q"/>
+                        <constraint firstAttribute="bottom" secondItem="W2Z-ri-I9e" secondAttribute="bottom" id="fcD-Kq-rX8"/>
+                        <constraint firstItem="ODU-Vl-D0i" firstAttribute="top" secondItem="XUh-YR-ahz" secondAttribute="top" id="jMp-1G-5EJ"/>
+                        <constraint firstItem="W2Z-ri-I9e" firstAttribute="top" secondItem="XUh-YR-ahz" secondAttribute="top" id="yca-hs-wkM"/>
+                    </constraints>
+                </customView>
+                <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfh-Oo-uwV">
+                    <rect key="frame" x="0.0" y="40" width="300" height="450"/>
+                    <clipView key="contentView" id="7j7-l1-OUg">
+                        <rect key="frame" x="1" y="1" width="298" height="448"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView id="yPL-kA-MYA">
+                                <rect key="frame" x="0.0" y="0.0" width="298" height="158"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" id="kPe-Cs-51a">
+                                    <size key="itemSize" width="50" height="50"/>
+                                </collectionViewFlowLayout>
+                                <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="-2" id="RnQ-XO-5tI"/>
+                                    <outlet property="delegate" destination="-2" id="esq-Zq-kpd"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="8AL-PQ-76Q">
+                        <rect key="frame" x="1" y="144" width="233" height="15"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="vVp-M3-Qxx">
+                        <rect key="frame" x="234" y="1" width="15" height="143"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="XUh-YR-ahz" firstAttribute="top" secondItem="Wfh-Oo-uwV" secondAttribute="bottom" id="0Ee-R4-37v"/>
+                <constraint firstAttribute="trailing" secondItem="XUh-YR-ahz" secondAttribute="trailing" id="64W-ol-eMk"/>
+                <constraint firstAttribute="trailing" secondItem="PIb-U6-bwQ" secondAttribute="trailing" id="83c-2D-bx1"/>
+                <constraint firstItem="Wfh-Oo-uwV" firstAttribute="top" secondItem="PIb-U6-bwQ" secondAttribute="bottom" id="A2l-fT-1yC"/>
+                <constraint firstItem="Wfh-Oo-uwV" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="Bro-8a-RFi"/>
+                <constraint firstAttribute="trailing" secondItem="Wfh-Oo-uwV" secondAttribute="trailing" id="IC8-HO-VTR"/>
+                <constraint firstItem="XUh-YR-ahz" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="Qgx-Or-FzJ"/>
+                <constraint firstItem="PIb-U6-bwQ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="XtO-BG-l1V"/>
+                <constraint firstItem="PIb-U6-bwQ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="bNT-ug-Tg7"/>
+                <constraint firstAttribute="bottom" secondItem="XUh-YR-ahz" secondAttribute="bottom" id="jmg-7g-qK1"/>
+            </constraints>
+            <point key="canvasLocation" x="47" y="192"/>
+        </customView>
+    </objects>
+</document>

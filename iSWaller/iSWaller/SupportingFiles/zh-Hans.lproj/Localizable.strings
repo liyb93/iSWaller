@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  iSWaller
+
+  Created by liyb on 2020/7/20.
+  Copyright © 2020 liyb. All rights reserved.
+*/
+
+"iSSetWallpaper" = "设置壁纸";
+"iSSearchPlacholder" = "关键词搜索";
+"iSSearchTitle" = "搜索";
+"iSDownloadAntiElection" = "反选";
+"iSDownloadDelete" = "删除";
+"iSDownloadTitle" = "下载";
+"iSDownloadSelectAll" = "全选";
+"iSDownloadCancel" = "取消";
+"iSSettingChange" = "更改";
+"iSSettingTitle" = "设置";
+"iSSettingAbout" = "关于我们";
+"iSSettingStartup" = "开机自启";
+"iSSettingUnite" = "多屏统一";
+"iSSettingNotification" = "更换壁纸通知";
+"iSSettingAutoChange" = "自动切换(本地)";
+"iSSettingPreview" = "预览质量";
+"iSSettingSavePath" = "存储路径";
+"iSSettingHotKey" = "快捷键";
+"iSSettingCleanCache" = "清除缓存";
+"iSSettingCleaning" = "清理中...";
+"iSSettingPrevious" = "上一张";
+"iSSettingNext" = "下一张";
+"iSAboutTitle" = "关于我们";
+
+"iSAboutDesc" = "iSWaller上千张高清壁纸，每天给您带来全新的艺术体验。
+
+功能：
+- 自动更换壁纸：15分钟、30分钟 、45分钟、1小时、2小时、1天等。
+- 搜索：支持模糊/精确搜索，快速找到喜爱的壁纸。
+- 快捷键：切换不喜欢的壁纸。
+- 预览壁纸质量切换：网络不好，切换图片预览质量。
+- 下载历史：记录使用的壁纸，防止喜爱的壁纸误删。
+
+使用iSWaller保持您的Mac桌面的新鲜感!";
+
+"iSChangeWallpaperSuccess" = "壁纸切换成功";
+"iSChangeWallpaperError" = "壁纸切换失败";
+
+"iSAutoTimeOff" = "关";
+"iSAutoTime15" = "15分钟";
+"iSAutoTime30" = "30分钟";
+"iSAutoTime45" = "45分钟";
+"iSAutoTime60" = "1小时";
+"iSAutoTime120" = "2小时";
+"iSAutoTime1" = "1天";
+"iSPreviewQuilatySmall" = "低质量";
+"iSPreviewQuilatyMedium" = "中等质量";
+"iSPreviewQuilatyFull" = "高质量";
+
+"iSNetworkFailed" = "未请求到数据，请稍后重试";
+"iSNoMoreData" = "没有更多数据了";
+"iSDownloadError" = "下载失败";

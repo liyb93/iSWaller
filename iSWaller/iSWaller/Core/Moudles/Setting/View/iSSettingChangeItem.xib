@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="iSSettingChangeItem" customModule="iSWaller" customModuleProvider="target">
+            <connections>
+                <outlet property="changeButton" destination="Fqw-Dh-Ino" id="B50-0E-Lmi"/>
+                <outlet property="textLabel" destination="hfJ-T5-YAt" id="o51-cP-VHz"/>
+                <outlet property="titleLabel" destination="Yc6-kp-hhZ" id="53W-sF-4wr"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="62"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hfJ-T5-YAt">
+                    <rect key="frame" x="15" y="0.0" width="370" height="21"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="Pab-4q-ZK9">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fqw-Dh-Ino">
+                    <rect key="frame" x="389" y="-7" width="82" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="DXX-Gv-Uvx"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IrC-Xg-nN7">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="changeDidClickAction:" target="-2" id="njb-Nj-dCO"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yc6-kp-hhZ">
+                    <rect key="frame" x="13" y="31" width="454" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="Ots-cN-m1d">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Fqw-Dh-Ino" secondAttribute="trailing" constant="15" id="59D-Mq-bbb"/>
+                <constraint firstItem="hfJ-T5-YAt" firstAttribute="top" secondItem="Yc6-kp-hhZ" secondAttribute="bottom" constant="10" id="LNA-fD-Cft"/>
+                <constraint firstAttribute="bottom" secondItem="Fqw-Dh-Ino" secondAttribute="bottom" id="RAR-T1-geW"/>
+                <constraint firstItem="Yc6-kp-hhZ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="15" id="TgM-5P-kfh"/>
+                <constraint firstItem="hfJ-T5-YAt" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="15" id="Yf6-dI-nfY"/>
+                <constraint firstItem="hfJ-T5-YAt" firstAttribute="top" secondItem="Fqw-Dh-Ino" secondAttribute="top" id="d0L-Dj-065"/>
+                <constraint firstItem="Fqw-Dh-Ino" firstAttribute="leading" secondItem="hfJ-T5-YAt" secondAttribute="trailing" constant="10" id="gz9-Gt-68o"/>
+                <constraint firstItem="Yc6-kp-hhZ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="15" id="p4P-RD-nmF"/>
+                <constraint firstAttribute="trailing" secondItem="Yc6-kp-hhZ" secondAttribute="trailing" constant="15" id="sNq-OV-wc7"/>
+                <constraint firstItem="hfJ-T5-YAt" firstAttribute="bottom" secondItem="Fqw-Dh-Ino" secondAttribute="bottom" id="xeG-pc-eyo"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="54"/>
+        </customView>
+    </objects>
+</document>

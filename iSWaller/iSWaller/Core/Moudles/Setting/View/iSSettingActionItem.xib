@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="iSSettingActionItem" customModule="iSWaller" customModuleProvider="target">
+            <connections>
+                <outlet property="textLabel" destination="e6x-JM-OT3" id="1rA-SX-ORk"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="46"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e6x-JM-OT3">
+                    <rect key="frame" x="13" y="15" width="244" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="VDS-ik-Awp">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X08-13-Cco">
+                    <rect key="frame" x="265" y="13" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="KJc-Di-uCf"/>
+                        <constraint firstAttribute="height" constant="20" id="S7M-A2-ozb"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSGoForwardTemplate" id="FWg-TU-OI2"/>
+                </imageView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IwJ-bx-x7x">
+                    <rect key="frame" x="15" y="15" width="270" height="16"/>
+                    <buttonCell key="cell" type="recessed" bezelStyle="recessed" alignment="center" imageScaling="proportionallyDown" inset="2" id="8Ob-Sb-G0a">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="systemBold" size="12"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="didSelectAction:" target="-2" id="AA3-GE-SNn"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="X08-13-Cco" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="B9U-Gt-0Os"/>
+                <constraint firstItem="e6x-JM-OT3" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="15" id="Cfc-AD-64r"/>
+                <constraint firstItem="IwJ-bx-x7x" firstAttribute="trailing" secondItem="X08-13-Cco" secondAttribute="trailing" id="Gwm-sO-ZSa"/>
+                <constraint firstItem="IwJ-bx-x7x" firstAttribute="top" secondItem="e6x-JM-OT3" secondAttribute="top" id="Uhq-kz-Blw"/>
+                <constraint firstItem="e6x-JM-OT3" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="15" id="Xsx-Dp-IPe"/>
+                <constraint firstAttribute="trailing" secondItem="X08-13-Cco" secondAttribute="trailing" constant="15" id="dyf-Q1-NXM"/>
+                <constraint firstAttribute="bottom" secondItem="e6x-JM-OT3" secondAttribute="bottom" constant="15" id="j01-Im-ekq"/>
+                <constraint firstItem="X08-13-Cco" firstAttribute="leading" secondItem="e6x-JM-OT3" secondAttribute="trailing" constant="10" id="oXr-dI-bTk"/>
+                <constraint firstItem="IwJ-bx-x7x" firstAttribute="leading" secondItem="e6x-JM-OT3" secondAttribute="leading" id="s4S-bL-R4o"/>
+                <constraint firstItem="IwJ-bx-x7x" firstAttribute="bottom" secondItem="e6x-JM-OT3" secondAttribute="bottom" id="yZf-ea-9yM"/>
+            </constraints>
+            <point key="canvasLocation" x="1050" y="53"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSGoForwardTemplate" width="9" height="12"/>
+    </resources>
+</document>

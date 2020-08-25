@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="iSImageItem" customModule="iSWaller_Mac" customModuleProvider="target">
+            <connections>
+                <outlet property="authorLabel" destination="Ugg-nT-BhY" id="i7n-dO-XLM"/>
+                <outlet property="downloadButton" destination="x7z-NQ-DRg" id="dLj-yh-mta"/>
+                <outlet property="iconView" destination="V0W-XF-DX3" id="Iqv-yC-df4"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V0W-XF-DX3">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" id="j9q-Aw-hWH"/>
+                </imageView>
+                <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ugg-nT-BhY">
+                    <rect key="frame" x="223" y="20" width="35" height="13"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="LJd-7W-DZF">
+                        <font key="font" metaFont="system" size="10"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="x7z-NQ-DRg">
+                    <rect key="frame" x="60" y="110" width="360" height="51"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="DJR-ee-MbO"/>
+                    </constraints>
+                    <buttonCell key="cell" type="recessed" title="Button" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8Hz-70-4lZ">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="systemBold" size="12"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="downloadDidClickAction:" target="-2" id="wu5-nT-GjS"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Ugg-nT-BhY" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="2L0-gt-m7l"/>
+                <constraint firstItem="x7z-NQ-DRg" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="5Xk-JU-2Cs"/>
+                <constraint firstItem="V0W-XF-DX3" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="7LN-m5-Djr"/>
+                <constraint firstItem="x7z-NQ-DRg" firstAttribute="width" secondItem="V0W-XF-DX3" secondAttribute="width" multiplier="0.75" id="7Zl-Uf-oq6"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ugg-nT-BhY" secondAttribute="trailing" constant="20" id="KEp-UC-92M"/>
+                <constraint firstItem="x7z-NQ-DRg" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="QEO-LQ-Cme"/>
+                <constraint firstAttribute="bottom" secondItem="Ugg-nT-BhY" secondAttribute="bottom" constant="20" id="Zyk-v0-Fre"/>
+                <constraint firstItem="V0W-XF-DX3" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="imQ-Vd-mbt"/>
+                <constraint firstItem="Ugg-nT-BhY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="kjr-dA-bZe"/>
+                <constraint firstAttribute="bottom" secondItem="V0W-XF-DX3" secondAttribute="bottom" id="lf3-jY-EHz"/>
+                <constraint firstAttribute="trailing" secondItem="V0W-XF-DX3" secondAttribute="trailing" id="rOk-QE-lLm"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="154"/>
+        </customView>
+    </objects>
+</document>

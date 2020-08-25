@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="iSSettingChooseItem" customModule="iSWaller" customModuleProvider="target">
+            <connections>
+                <outlet property="popUpButton" destination="X8Z-PK-fvc" id="gKm-lF-e7K"/>
+                <outlet property="titleLabel" destination="P9Z-jd-9Zw" id="0DF-C8-Wqi"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="62"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="P9Z-jd-9Zw">
+                    <rect key="frame" x="13" y="31" width="454" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="QhL-ja-MEG">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X8Z-PK-fvc">
+                    <rect key="frame" x="13" y="-3" width="455" height="25"/>
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="YJe-Hh-1Cn" id="pOL-LF-1lo">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <menu key="menu" id="UvA-FC-e0N">
+                            <items>
+                                <menuItem title="Item 1" state="on" id="YJe-Hh-1Cn"/>
+                                <menuItem title="Item 2" id="XWn-d1-Nym"/>
+                                <menuItem title="Item 3" id="TTz-Ec-HNR"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="chooseDidClickAction:" target="-2" id="MQx-aW-q2M"/>
+                    </connections>
+                </popUpButton>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="P9Z-jd-9Zw" secondAttribute="trailing" constant="15" id="QXe-Uy-fno"/>
+                <constraint firstItem="X8Z-PK-fvc" firstAttribute="leading" secondItem="P9Z-jd-9Zw" secondAttribute="leading" id="RAl-Pd-jxU"/>
+                <constraint firstItem="P9Z-jd-9Zw" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="15" id="TUr-Bt-e6j"/>
+                <constraint firstItem="P9Z-jd-9Zw" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="15" id="VwU-co-Szr"/>
+                <constraint firstItem="X8Z-PK-fvc" firstAttribute="trailing" secondItem="P9Z-jd-9Zw" secondAttribute="trailing" id="eug-SI-OiW"/>
+                <constraint firstAttribute="bottom" secondItem="X8Z-PK-fvc" secondAttribute="bottom" id="sl1-3b-XeF"/>
+                <constraint firstItem="X8Z-PK-fvc" firstAttribute="top" secondItem="P9Z-jd-9Zw" secondAttribute="bottom" constant="10" id="w85-kF-Z4L"/>
+            </constraints>
+            <point key="canvasLocation" x="125" y="76"/>
+        </customView>
+    </objects>
+</document>

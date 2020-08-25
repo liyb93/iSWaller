@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="iSSettingConfigItem" customModule="iSWaller" customModuleProvider="target">
+            <connections>
+                <outlet property="nextLabel" destination="Ecu-bm-s9X" id="vBk-oe-Isd"/>
+                <outlet property="nextView" destination="QYU-cS-MXV" id="9Ob-mN-f7A"/>
+                <outlet property="previousLabel" destination="Sd1-jO-eIB" id="gXs-yN-cqZ"/>
+                <outlet property="previousView" destination="agV-W1-cYJ" id="zRb-6n-8vs"/>
+                <outlet property="titleLabel" destination="FaH-58-UEB" id="Okm-M6-E2u"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="89"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FaH-58-UEB">
+                    <rect key="frame" x="13" y="58" width="454" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="zCd-kh-pyS">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sd1-jO-eIB">
+                    <rect key="frame" x="13" y="30" width="54" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="2kp-yp-cdQ"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="上一张" id="edZ-lz-PCR">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ecu-bm-s9X">
+                    <rect key="frame" x="13" y="0.0" width="54" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="下一张" id="Wnt-4w-qor">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="agV-W1-cYJ" customClass="MASShortcutView">
+                    <rect key="frame" x="75" y="28" width="390" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="bdA-fX-Wg2"/>
+                    </constraints>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="QYU-cS-MXV" customClass="MASShortcutView">
+                    <rect key="frame" x="75" y="-2" width="390" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="QXK-OS-azm"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="agV-W1-cYJ" firstAttribute="leading" secondItem="Sd1-jO-eIB" secondAttribute="trailing" constant="10" id="7ms-iU-lOE"/>
+                <constraint firstItem="QYU-cS-MXV" firstAttribute="leading" secondItem="agV-W1-cYJ" secondAttribute="leading" id="Ju9-Gl-6lY"/>
+                <constraint firstItem="Sd1-jO-eIB" firstAttribute="centerY" secondItem="agV-W1-cYJ" secondAttribute="centerY" id="KuM-6F-Cwg"/>
+                <constraint firstItem="Ecu-bm-s9X" firstAttribute="trailing" secondItem="Sd1-jO-eIB" secondAttribute="trailing" id="L5b-R5-up9"/>
+                <constraint firstItem="Sd1-jO-eIB" firstAttribute="leading" secondItem="FaH-58-UEB" secondAttribute="leading" id="NIr-oC-wCL"/>
+                <constraint firstItem="FaH-58-UEB" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="15" id="Qh1-aQ-oej"/>
+                <constraint firstItem="QYU-cS-MXV" firstAttribute="trailing" secondItem="agV-W1-cYJ" secondAttribute="trailing" id="VJs-SG-V8m"/>
+                <constraint firstItem="agV-W1-cYJ" firstAttribute="trailing" secondItem="FaH-58-UEB" secondAttribute="trailing" id="Vtb-18-Ydh"/>
+                <constraint firstAttribute="trailing" secondItem="FaH-58-UEB" secondAttribute="trailing" constant="15" id="WhH-ch-uUw"/>
+                <constraint firstItem="FaH-58-UEB" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="15" id="aay-rJ-Cff"/>
+                <constraint firstItem="Ecu-bm-s9X" firstAttribute="leading" secondItem="Sd1-jO-eIB" secondAttribute="leading" id="gJU-TK-6yz"/>
+                <constraint firstItem="agV-W1-cYJ" firstAttribute="top" secondItem="FaH-58-UEB" secondAttribute="bottom" constant="10" id="nHV-jM-pTc"/>
+                <constraint firstItem="QYU-cS-MXV" firstAttribute="top" secondItem="agV-W1-cYJ" secondAttribute="bottom" constant="10" id="r6q-ce-gBA"/>
+                <constraint firstAttribute="bottom" secondItem="Ecu-bm-s9X" secondAttribute="bottom" id="sC5-vN-uvH"/>
+                <constraint firstItem="Ecu-bm-s9X" firstAttribute="centerY" secondItem="QYU-cS-MXV" secondAttribute="centerY" id="sgy-94-chH"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="61.5"/>
+        </customView>
+    </objects>
+</document>

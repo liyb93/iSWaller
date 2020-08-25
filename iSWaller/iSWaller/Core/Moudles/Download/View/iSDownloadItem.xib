@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="iSDownloadItem" customModule="iSWaller_Mac" customModuleProvider="target">
+            <connections>
+                <outlet property="authorLabel" destination="ZzF-WL-oRB" id="o6H-IR-SYE"/>
+                <outlet property="deleteButton" destination="BMq-LX-igV" id="ttg-KY-rhj"/>
+                <outlet property="downloadButton" destination="VHg-zO-GhF" id="TLc-7s-kBS"/>
+                <outlet property="iconView" destination="NfY-a8-jwr" id="jMX-jx-JqG"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NfY-a8-jwr">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" id="U6A-Pp-uOg"/>
+                </imageView>
+                <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZzF-WL-oRB">
+                    <rect key="frame" x="223" y="19" width="35" height="13"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="L4N-hC-vyv">
+                        <font key="font" metaFont="system" size="10"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BMq-LX-igV">
+                    <rect key="frame" x="439" y="8" width="32" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="7vv-hb-HCL"/>
+                        <constraint firstAttribute="height" constant="20" id="jST-K9-0iC"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="TcA-C0-cdh">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="deleteDidClickAction:" target="-2" id="dxa-cs-OUH"/>
+                    </connections>
+                </button>
+                <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VHg-zO-GhF">
+                    <rect key="frame" x="60" y="110" width="360" height="51"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="pUs-Jv-meS"/>
+                    </constraints>
+                    <buttonCell key="cell" type="recessed" title="Button" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tND-at-kUI">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="systemBold" size="12"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="wallpaperDidClickAction:" target="-2" id="bYq-jk-26s"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="NfY-a8-jwr" secondAttribute="trailing" id="6Qf-sL-J5I"/>
+                <constraint firstItem="VHg-zO-GhF" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="8aP-gm-tdF"/>
+                <constraint firstItem="NfY-a8-jwr" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="9da-d3-13f"/>
+                <constraint firstItem="ZzF-WL-oRB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="45" id="CL1-s4-BiN"/>
+                <constraint firstItem="ZzF-WL-oRB" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="QcO-bk-Nbe"/>
+                <constraint firstAttribute="trailing" secondItem="BMq-LX-igV" secondAttribute="trailing" constant="15" id="QhW-GK-VqR"/>
+                <constraint firstItem="VHg-zO-GhF" firstAttribute="width" secondItem="NfY-a8-jwr" secondAttribute="width" multiplier="0.75" id="TY1-Kc-b0C"/>
+                <constraint firstItem="VHg-zO-GhF" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="Xjn-nm-APj"/>
+                <constraint firstAttribute="bottom" secondItem="BMq-LX-igV" secondAttribute="bottom" constant="15" id="iy0-wx-qwb"/>
+                <constraint firstAttribute="bottom" secondItem="NfY-a8-jwr" secondAttribute="bottom" id="ldA-Um-Ym8"/>
+                <constraint firstItem="BMq-LX-igV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZzF-WL-oRB" secondAttribute="trailing" constant="10" id="mux-Lb-UE4"/>
+                <constraint firstItem="ZzF-WL-oRB" firstAttribute="centerY" secondItem="BMq-LX-igV" secondAttribute="centerY" id="o1n-HE-bDz"/>
+                <constraint firstItem="NfY-a8-jwr" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="v6b-cN-smp"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="154"/>
+        </customView>
+    </objects>
+</document>
