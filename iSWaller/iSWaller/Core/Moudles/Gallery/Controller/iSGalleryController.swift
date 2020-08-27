@@ -40,6 +40,8 @@ class iSGalleryController: iSBaseController {
         
         // 图片质量更新通知
         NotificationCenter.default.addObserver(self, selector: #selector(updateImageQualityAction), name: iSUpdateImageQualityNotification, object: nil)
+        // 清理缓存通知
+        NotificationCenter.default.addObserver(self, selector: #selector(cleanCacheAction), name: iSCleanCacheNotification, object: nil)
     }
     
     private func configUI() {
@@ -142,6 +144,11 @@ class iSGalleryController: iSBaseController {
     
     @objc private func updateImageQualityAction() {
         collectionView.reloadData()
+    }
+    
+    @objc private func cleanCacheAction() {
+        dataSource = []
+        previousPageData()
     }
 }
 

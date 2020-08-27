@@ -227,5 +227,7 @@ extension iSSettingController: iSSettingSelectedItemDelegate, iSSettingChooseIte
     func settingActionItem(didClick item: iSSettingActionItem) {
         iSHUDManager.show(to: view, text: NSLocalizedString("iSSettingCleaning", comment: "清理中..."), delay: 2)
         iSDataManager.shared.clearNetworkCache()
+        // 清理缓存通知
+        NotificationCenter.default.post(name: iSCleanCacheNotification, object: nil)
     }
 }
