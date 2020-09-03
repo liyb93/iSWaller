@@ -1,3 +1,9 @@
+# 声明
+
+该项目仅供参考学习，不允许原封不动上架AppStore。
+
+🚫🚫🚫仅供参考学习，禁止用于商业用途🚫🚫🚫
+
 # iSWaller介绍
 
 一款Mac端小巧壁纸应用，使用[pixabay](https://pixabay.com/)开放API。
