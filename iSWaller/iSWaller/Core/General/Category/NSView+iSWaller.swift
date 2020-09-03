@@ -137,4 +137,11 @@ extension NSView {
     func stopRotationAnimaton() {
         layer?.removeAnimation(forKey: "rotation.animation")
     }
+    
+    func isRotationAnimaton() -> Bool {
+        if (layer?.animation(forKey: "rotation.animation")) != nil {
+            return true
+        }
+        return false
+    }
 }

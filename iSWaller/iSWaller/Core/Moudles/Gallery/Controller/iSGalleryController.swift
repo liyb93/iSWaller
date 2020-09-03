@@ -20,15 +20,16 @@ class iSGalleryController: iSBaseController {
     @IBOutlet weak var navigationBar: NSView!
     @IBOutlet weak var progressView: iSDownloadProgressView!
     @IBOutlet weak var titleLabel: NSTextField!
-    @IBOutlet weak var previousButton: NSButton!
     @IBOutlet weak var searchButton: NSButton!
     @IBOutlet weak var toolBar: NSView!
-    @IBOutlet weak var nextButton: NSButton!
     @IBOutlet weak var historyButton: NSButton!
     @IBOutlet weak var settingButton: NSButton!
+    @IBOutlet weak var refreshButton: iSRefreshButton!
     
     private var dataSource: [iSGalleryModel] = []
     private var page: Int = 1
+    // 是否请求下一页
+    private var isRequestNextPage: Bool = false
     
     weak var delegate: iSGalleryControllerDelegate?
     
@@ -42,6 +43,9 @@ class iSGalleryController: iSBaseController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateImageQualityAction), name: iSUpdateImageQualityNotification, object: nil)
         // 清理缓存通知
         NotificationCenter.default.addObserver(self, selector: #selector(cleanCacheAction), name: iSCleanCacheNotification, object: nil)
+        // 注册滚动通知
+        NotificationCenter.default.addObserver(self, selector: #selector(scrollViewDidScroll), name: NSScrollView.didLiveScrollNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(scrollViewDidEndScroll), name: NSScrollView.didEndLiveScrollNotification, object: nil)
     }
     
     private func configUI() {
@@ -60,17 +64,13 @@ class iSGalleryController: iSBaseController {
         titleLabel.isBordered = false
         titleLabel.drawsBackground = false
         titleLabel.backgroundColor = .clear
-        previousButton.image = NSImage.init(named: "up")
-        nextButton.image = NSImage.init(named: "down")
-        nextButton.setBackgroundColor(.backgroundColor)
-        nextButton.layer?.cornerRadius = 15.0
-        nextButton.layer?.masksToBounds = true
-        previousButton.setBackgroundColor(.backgroundColor)
-        previousButton.layer?.cornerRadius = 15.0
-        previousButton.layer?.masksToBounds = true
-        previousButton.isHidden = true
-        nextButton.isHidden = true
         progressView.delegate = self
+        
+        // 点击刷新
+        refreshButton.didClickButtonHandler = { [unowned self] in
+            self.collectionView.scroll(.zero)
+            self.previousPageData()
+        }
     }
     
     // MARK: < Network >
@@ -78,18 +78,15 @@ class iSGalleryController: iSBaseController {
         page = 1
         iSHUDManager.show(to: view)
         iSNetwork.gallery { [unowned self] (result) in
-            self.previousButton.isHidden = false
             iSHUDManager.hide(to: self.view)
+            self.refreshButton.stopAnimaton()
             if let hits = result as? [String: Any], let data = hits["hits"] {
                 let arr = (Array<iSGalleryModel>.deserialize(from: data as? [Any]) as? [iSGalleryModel]) ?? []
                 self.dataSource.append(contentsOf: arr)
                 self.collectionView.reloadData()
-                self.nextButton.isHidden = false
-                self.previousButton.image = NSImage.init(named: "up")
             } else {
                 let text = NSLocalizedString("iSNetworkFailed", comment: "未请求到数据，请稍后重试")
                 iSHUDManager.show(to: self.view, text: text, delay: 2)
-                self.previousButton.image = NSImage.init(named: "refresh")
             }
         }
     }
@@ -129,17 +126,21 @@ class iSGalleryController: iSBaseController {
         delegate?.galleryController(self, didSelectItemAt: .setting)
     }
     
-    @IBAction func previousDidClickAction(_ sender: Any) {
-        collectionView.scroll(.zero)
-        if dataSource.count <= 0 {
-            previousPageData()
+    @objc private func scrollViewDidScroll() {
+        let offsetY = scrollView.contentView.bounds.origin.y
+        let contentHeight = scrollView.documentView?.bounds.height  ?? 0
+        let height = contentHeight - scrollView.contentSize.height
+        if offsetY >= height {
+            isRequestNextPage = true
+        } else {
+            isRequestNextPage = false
         }
     }
     
-    @IBAction func nextDidClickAction(_ sender: Any) {
-        let contenSize = collectionView.collectionViewLayout?.collectionViewContentSize ?? .zero
-        collectionView.scroll(NSPoint.init(x: 0, y: contenSize.height))
-        nextPageData()
+    @objc private func scrollViewDidEndScroll() {
+        if isRequestNextPage {
+            nextPageData()
+        }
     }
     
     @objc private func updateImageQualityAction() {

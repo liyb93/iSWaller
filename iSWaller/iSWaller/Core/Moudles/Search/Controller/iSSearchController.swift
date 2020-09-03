@@ -14,16 +14,20 @@ class iSSearchController: iSBaseController {
     @IBOutlet weak var scrollView: NSScrollView!
     @IBOutlet weak var clipView: NSClipView!
     @IBOutlet weak var collectionView: NSCollectionView!
-    @IBOutlet weak var previousButton: NSButton!
-    @IBOutlet weak var nextButton: NSButton!
+    @IBOutlet weak var refreshButton: iSRefreshButton!
     @IBOutlet weak var progressView: iSDownloadProgressView!
     
     private var dataSource: [iSGalleryModel] = []
     private var page: Int = 1
+    // 是否请求下一页
+    private var isRequestNextPage: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
+        // 注册滚动通知
+        NotificationCenter.default.addObserver(self, selector: #selector(scrollViewDidScroll), name: NSScrollView.didLiveScrollNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(scrollViewDidEndScroll), name: NSScrollView.didEndLiveScrollNotification, object: nil)
     }
     
     private func configUI() {
@@ -38,29 +42,27 @@ class iSSearchController: iSBaseController {
         navigationBar.titleLabel.placeholderString = NSLocalizedString("iSSearchPlacholder", comment: "关键词搜索")
         navigationBar.rightButton.setTitle(NSLocalizedString("iSSearchTitle", comment: "搜索"))
         navigationBar.rightButton.addTarget(self, action: #selector(searchDidClickAction))
-        previousButton.image = NSImage.init(named: "up")
-        nextButton.image = NSImage.init(named: "down")
-        previousButton.isHidden = true
-        nextButton.isHidden = true
-        nextButton.setBackgroundColor(.backgroundColor)
-        nextButton.layer?.cornerRadius = 15.0
-        nextButton.layer?.masksToBounds = true
-        previousButton.setBackgroundColor(.backgroundColor)
-        previousButton.layer?.cornerRadius = 15.0
-        previousButton.layer?.masksToBounds = true
         progressView.delegate = self
+        
+        // 点击刷新
+        refreshButton.didClickButtonHandler = { [unowned self] in
+            self.collectionView.scroll(.zero)
+            self.searchGallery()
+        }
     }
     
     // MARK: < Network >
     private func searchGallery(_ isChange: Bool = false, page: Int = 1) {
         let keyword = navigationBar.titleLabel.stringValue
         if keyword.count <= 0 {
+            refreshButton.stopAnimaton()
+            iSHUDManager.show(to: self.view, text: "请输入关键词", delay: 2)
             return
         }
         iSHUDManager.show(to: view)
         iSNetwork.search(keyword, page: page) { [unowned self] (result) in
-            self.previousButton.isHidden = false
             iSHUDManager.hide(to: self.view)
+            self.refreshButton.stopAnimaton()
             if let hits = result as? [String: Any], let data = hits["hits"] {
                 let arr = (Array<iSGalleryModel>.deserialize(from: data as? [Any]) as? [iSGalleryModel]) ?? []
                 if isChange {
@@ -68,15 +70,11 @@ class iSSearchController: iSBaseController {
                 }
                 self.dataSource.append(contentsOf: arr)
                 self.collectionView.reloadData()
-                self.nextButton.isHidden = false
-                self.previousButton.image = NSImage.init(named: "up")
             } else {
                 let text = NSLocalizedString("iSNetworkFailed", comment: "未请求到数据，请稍后重试")
                 iSHUDManager.show(to: self.view, text: text, delay: 2)
                 if self.page > 1 {
                     self.page -= 1
-                } else {
-                    self.previousButton.image = NSImage.init(named: "refresh")
                 }
             }
         }
@@ -88,8 +86,6 @@ class iSSearchController: iSBaseController {
         navigationBar.titleLabel.stringValue = ""
         dataSource = []
         collectionView.reloadData()
-        nextButton.isHidden = true
-        previousButton.isHidden = true
     }
     
     @objc private func searchDidClickAction() {
@@ -97,18 +93,22 @@ class iSSearchController: iSBaseController {
         searchGallery(true)
     }
     
-    @IBAction func previousDidClickAction(_ sender: Any) {
-        collectionView.scroll(.zero)
-        if dataSource.count <= 0 && navigationBar.titleLabel.stringValue.count > 0 {
-            searchGallery()
+    @objc private func scrollViewDidScroll() {
+        let offsetY = scrollView.contentView.bounds.origin.y
+        let contentHeight = scrollView.documentView?.bounds.height  ?? 0
+        let height = contentHeight - scrollView.contentSize.height
+        if offsetY >= height {
+            isRequestNextPage = true
+        } else {
+            isRequestNextPage = false
         }
     }
     
-    @IBAction func nextDidClickAction(_ sender: Any) {
-        let contenSize = collectionView.collectionViewLayout?.collectionViewContentSize ?? .zero
-        collectionView.scroll(NSPoint.init(x: 0, y: contenSize.height))
-        page += 1
-        searchGallery(page: page)
+    @objc private func scrollViewDidEndScroll() {
+        if isRequestNextPage {
+            page += 1
+            searchGallery(page: page)
+        }
     }
 }
 

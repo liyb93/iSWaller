@@ -65,6 +65,7 @@
 		EAC7C72924B21A92003C9BB5 /* iSWaller_Helper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = EAC7C70924B218D2003C9BB5 /* iSWaller_Helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EAD51CE224AF83B500ADD22B /* iSHUDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD51CE124AF83B500ADD22B /* iSHUDManager.swift */; };
 		EAE0839024B6DCC1009910F9 /* iSDownloadSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0838F24B6DCC1009910F9 /* iSDownloadSelectView.swift */; };
+		EAE5E51325008EDA00AD7CEE /* iSRefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5E51225008EDA00AD7CEE /* iSRefreshButton.swift */; };
 		EAF46D1824C59175003A8586 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAF46D1A24C59175003A8586 /* Localizable.strings */; };
 		FD05FACEC34FF5BB6187C2FF /* Pods_iSWaller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D839D2002310B1047742043 /* Pods_iSWaller.framework */; };
 /* End PBXBuildFile section */
@@ -197,6 +198,7 @@
 		EAD51CDD24AF800200ADD22B /* iSWaller-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iSWaller-Bridging-Header.h"; sourceTree = "<group>"; };
 		EAD51CE124AF83B500ADD22B /* iSHUDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSHUDManager.swift; sourceTree = "<group>"; };
 		EAE0838F24B6DCC1009910F9 /* iSDownloadSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSDownloadSelectView.swift; sourceTree = "<group>"; };
+		EAE5E51225008EDA00AD7CEE /* iSRefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSRefreshButton.swift; sourceTree = "<group>"; };
 		EAF46CFC24C59066003A8586 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		EAF46CFD24C59066003A8586 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		EAF46CFE24C59087003A8586 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				EAAB51AA24AC32A4003710F0 /* iSNavigationBar.swift */,
 				EAC7C6DB24B040E2003C9BB5 /* iSDownloadProgressView.swift */,
 				EAC7C6E224B0C87D003C9BB5 /* iSTextView.swift */,
+				EAE5E51225008EDA00AD7CEE /* iSRefreshButton.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 				EA084BF524AB4D9E00BAD17E /* iSRootController.swift in Sources */,
 				EAAB51B824AC6208003710F0 /* iSBaseController.swift in Sources */,
 				EA60E8A124AF345E00AACC7C /* NSImage+iSWaller.swift in Sources */,
+				EAE5E51325008EDA00AD7CEE /* iSRefreshButton.swift in Sources */,
 				EA084BED24AB427500BAD17E /* NSView+iSWaller.swift in Sources */,
 				EA1488E524CEF0BE005C61C8 /* iSTextField.swift in Sources */,
 				EAAB51AF24AC510B003710F0 /* NSButton+iSWaller.swift in Sources */,
