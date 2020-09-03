@@ -16,13 +16,9 @@
 
 # 预览图
 
-![1](https://raw.githubusercontent.com/liyb93/iSWaller/master/screenshot/1.png)
-
-![2](https://raw.githubusercontent.com/liyb93/iSWaller/master/screenshot/2.png)
-
-![3](https://raw.githubusercontent.com/liyb93/iSWaller/master/screenshot/3.png)
-
-![4](https://raw.githubusercontent.com/liyb93/iSWaller/master/screenshot/4.png)
+| ![1](https://raw.githubusercontent.com/liyb93/iSWaller/master/screenshot/1.png) | ![2](https://raw.githubusercontent.com/liyb93/iSWaller/master/screenshot/2.png) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![3](https://raw.githubusercontent.com/liyb93/iSWaller/master/screenshot/3.png) | ![4](https://raw.githubusercontent.com/liyb93/iSWaller/master/screenshot/4.png) |
 
 # 使用
 
