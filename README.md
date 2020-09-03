@@ -1,6 +1,8 @@
-# 声明
+<div style="align: center">
+<img src="https://raw.githubusercontent.com/liyb93/iSWaller/master/screenshot/icon.png"/>
+</div>
 
-该项目仅供参考学习，不允许原封不动上架AppStore。
+# 声明
 
 🚫🚫🚫仅供参考学习，禁止用于商业用途🚫🚫🚫
 
