@@ -1,4 +1,4 @@
-<div style="align: center">
+<div align=center>
 <img src="https://raw.githubusercontent.com/liyb93/iSWaller/master/screenshot/icon.png"/>
 </div>
 
