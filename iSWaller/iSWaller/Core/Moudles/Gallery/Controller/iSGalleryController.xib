@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="iSGalleryController" customModule="iSWaller" customModuleProvider="target">
             <connections>
+                <outlet property="categoryView" destination="Uw2-QI-1iN" id="LN9-Ku-Ptm"/>
                 <outlet property="clipView" destination="cJc-iW-8Pg" id="DVE-dn-8UT"/>
                 <outlet property="collectionView" destination="Qb1-lk-hGG" id="qPr-rx-N9z"/>
                 <outlet property="historyButton" destination="yfL-dv-1Hq" id="cNI-s7-Uuw"/>
@@ -95,13 +96,13 @@
                     </constraints>
                 </customView>
                 <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxe-qC-LxK">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="490"/>
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="460"/>
                     <clipView key="contentView" copiesOnScroll="NO" id="cJc-iW-8Pg">
-                        <rect key="frame" x="1" y="1" width="298" height="488"/>
+                        <rect key="frame" x="1" y="1" width="298" height="458"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView id="Qb1-lk-hGG">
-                                <rect key="frame" x="0.0" y="0.0" width="298" height="488"/>
+                                <rect key="frame" x="0.0" y="0.0" width="298" height="458"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" id="nGj-rI-Kmx">
                                     <size key="itemSize" width="50" height="50"/>
@@ -120,7 +121,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="JVh-9L-TXz">
-                        <rect key="frame" x="283" y="1" width="16" height="488"/>
+                        <rect key="frame" x="283" y="1" width="16" height="428"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
@@ -137,6 +138,12 @@
                         <constraint firstAttribute="height" constant="40" id="pQj-AA-SQP"/>
                     </constraints>
                 </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="Uw2-QI-1iN" customClass="iSCategoryView" customModule="iSWaller" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="460" width="300" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="eMO-hI-c9f"/>
+                    </constraints>
+                </customView>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="0fu-8K-cKU" secondAttribute="bottom" id="0jg-3Q-BPp"/>
@@ -145,12 +152,15 @@
                 <constraint firstAttribute="trailing" secondItem="0fu-8K-cKU" secondAttribute="trailing" id="9ip-4h-jNK"/>
                 <constraint firstItem="CpN-Zb-xwR" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="E6t-iL-7Te"/>
                 <constraint firstAttribute="bottom" secondItem="Mxe-qC-LxK" secondAttribute="bottom" id="Go2-sV-aIC"/>
+                <constraint firstAttribute="trailing" secondItem="Uw2-QI-1iN" secondAttribute="trailing" id="I64-ak-jFb"/>
                 <constraint firstItem="0fu-8K-cKU" firstAttribute="top" secondItem="hae-w5-XCX" secondAttribute="bottom" constant="10" id="KRc-5f-sqk"/>
-                <constraint firstItem="Mxe-qC-LxK" firstAttribute="top" secondItem="CpN-Zb-xwR" secondAttribute="bottom" id="O5B-XP-YHl"/>
                 <constraint firstAttribute="trailing" secondItem="Mxe-qC-LxK" secondAttribute="trailing" id="PzG-pa-Iig"/>
                 <constraint firstItem="hae-w5-XCX" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="V7g-J8-eqx"/>
+                <constraint firstItem="Uw2-QI-1iN" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="dNQ-6Z-ya6"/>
+                <constraint firstItem="Mxe-qC-LxK" firstAttribute="top" secondItem="Uw2-QI-1iN" secondAttribute="bottom" id="mfk-L3-ibO"/>
                 <constraint firstItem="Mxe-qC-LxK" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="uVV-oW-YdJ"/>
                 <constraint firstAttribute="trailing" secondItem="CpN-Zb-xwR" secondAttribute="trailing" id="uth-kj-llg"/>
+                <constraint firstItem="Uw2-QI-1iN" firstAttribute="top" secondItem="CpN-Zb-xwR" secondAttribute="bottom" id="zqX-bo-04s"/>
             </constraints>
             <point key="canvasLocation" x="24" y="249"/>
         </customView>

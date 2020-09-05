@@ -63,6 +63,8 @@
 		EAC7C71324B218D8003C9BB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC7C71124B218D8003C9BB5 /* Main.storyboard */; };
 		EAC7C71A24B21A00003C9BB5 /* iSWaller_Helper.app in Resources */ = {isa = PBXBuildFile; fileRef = EAC7C70924B218D2003C9BB5 /* iSWaller_Helper.app */; };
 		EAC7C72924B21A92003C9BB5 /* iSWaller_Helper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = EAC7C70924B218D2003C9BB5 /* iSWaller_Helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EACDA0492501E36600C1C489 /* iSCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDA0482501E36600C1C489 /* iSCategoryView.swift */; };
+		EACDA04B2502152800C1C489 /* Dictionary+iSWaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDA04A2502152800C1C489 /* Dictionary+iSWaller.swift */; };
 		EAD51CE224AF83B500ADD22B /* iSHUDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD51CE124AF83B500ADD22B /* iSHUDManager.swift */; };
 		EAE0839024B6DCC1009910F9 /* iSDownloadSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0838F24B6DCC1009910F9 /* iSDownloadSelectView.swift */; };
 		EAE5E51325008EDA00AD7CEE /* iSRefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5E51225008EDA00AD7CEE /* iSRefreshButton.swift */; };
@@ -195,6 +197,8 @@
 		EAC7C71224B218D8003C9BB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAC7C71424B218D8003C9BB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAC7C71524B218D8003C9BB5 /* iSWallerHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iSWallerHelper.entitlements; sourceTree = "<group>"; };
+		EACDA0482501E36600C1C489 /* iSCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSCategoryView.swift; sourceTree = "<group>"; };
+		EACDA04A2502152800C1C489 /* Dictionary+iSWaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+iSWaller.swift"; sourceTree = "<group>"; };
 		EAD51CDD24AF800200ADD22B /* iSWaller-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iSWaller-Bridging-Header.h"; sourceTree = "<group>"; };
 		EAD51CE124AF83B500ADD22B /* iSHUDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSHUDManager.swift; sourceTree = "<group>"; };
 		EAE0838F24B6DCC1009910F9 /* iSDownloadSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSDownloadSelectView.swift; sourceTree = "<group>"; };
@@ -254,6 +258,7 @@
 			children = (
 				EA4EFC05248F0A2300EF9DE7 /* iSImageItem.swift */,
 				EA4EFC06248F0A2300EF9DE7 /* iSImageItem.xib */,
+				EACDA0482501E36600C1C489 /* iSCategoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				EA60E89C24AF21BC00AACC7C /* String+iSWaller.swift */,
 				EA60E8A024AF345E00AACC7C /* NSImage+iSWaller.swift */,
 				EA0AF85824B5C72B0056EDE6 /* Date+iSWaller.swift */,
+				EACDA04A2502152800C1C489 /* Dictionary+iSWaller.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -383,6 +389,7 @@
 			children = (
 				EAAB51AA24AC32A4003710F0 /* iSNavigationBar.swift */,
 				EAC7C6DB24B040E2003C9BB5 /* iSDownloadProgressView.swift */,
+				EA1488E424CEF0BE005C61C8 /* iSTextField.swift */,
 				EAC7C6E224B0C87D003C9BB5 /* iSTextView.swift */,
 				EAE5E51225008EDA00AD7CEE /* iSRefreshButton.swift */,
 			);
@@ -553,7 +560,6 @@
 			children = (
 				EAAB51B624AC6208003710F0 /* iSBaseController.swift */,
 				EAAB51B724AC6208003710F0 /* iSBaseController.xib */,
-				EA1488E424CEF0BE005C61C8 /* iSTextField.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -781,6 +787,8 @@
 				EA60E89D24AF21BC00AACC7C /* String+iSWaller.swift in Sources */,
 				EAAB51AB24AC32A4003710F0 /* iSNavigationBar.swift in Sources */,
 				EA2F528B24BEC6D2007EEC45 /* iSSettingActionItem.swift in Sources */,
+				EACDA0492501E36600C1C489 /* iSCategoryView.swift in Sources */,
+				EACDA04B2502152800C1C489 /* Dictionary+iSWaller.swift in Sources */,
 				EAE0839024B6DCC1009910F9 /* iSDownloadSelectView.swift in Sources */,
 				EA15AE16248E489000191A5B /* AppDelegate.swift in Sources */,
 				EA2F527B24BEC66D007EEC45 /* iSSettingSelectedItem.swift in Sources */,

@@ -15,5 +15,7 @@ class iSTextField: NSTextField {
     override func textDidChange(_ notification: Notification) {
         super.textDidChange(notification)
         textDidChangeHandler?(stringValue)
+        
     }
+
 }

@@ -1,7 +1,6 @@
 <div align=center>
 <img src="https://raw.githubusercontent.com/liyb93/iSWaller/master/screenshot/icon.png"/>
 </div>
-
 # 声明
 
 🚫🚫🚫仅供参考学习，禁止用于商业用途🚫🚫🚫
@@ -20,7 +19,7 @@
 
 \- 预览壁纸质量切换：网络不好，切换图片预览质量。
 
-\- 下载历史：记录使用的壁纸，防止喜爱的壁纸误删。
+\- 下载历史：记录下载过的壁纸，防止喜爱的壁纸误删。
 
 # 预览图
 
@@ -36,3 +35,6 @@
 >
 > $ pod install
 
+# 其他
+
+最后喜欢的可以点颗小心心支持一下，非常感谢！

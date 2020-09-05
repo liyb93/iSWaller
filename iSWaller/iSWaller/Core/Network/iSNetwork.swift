@@ -6,28 +6,83 @@
 //  Copyright © 2020 liyb. All rights reserved.
 //
 
+/*
+ API接口参数
+ 
+ q:  搜索关键词
+ 
+ lang:   搜索语言,
+ 可接受: cs, da, de, en, es, fr, id, it, hu, nl, no, pl, pt, ro, sk, fi, sv, tr, vi, th, bg, ru, el, ja, ko, zh.
+ 默认: "en"
+ 
+ id 图像id
+ image_type: 图片类型.
+ 可接受: "all", "photo", "illustration", "vector".
+ 默认: "all"
+ 
+ orientation:    图片方向
+ 可接受: "all", "horizontal", "vertical"
+ 默认: "all"
+ 
+ category:   类别
+ 可接受: backgrounds, fashion, nature, science, education, feelings, health, people, religion, places, animals, industry, computer, food, sports, transportation, travel, buildings, business, music
+ 
+ min_width:  最小宽度
+ 默认: "0"
+ 
+ min_height: 最小高度
+ 默认: "0"
+ 
+ colors: 颜色
+ 可接受: "grayscale", "transparent", "red", "orange", "yellow", "green", "turquoise", "blue", "lilac", "pink", "white", "gray", "black", "brown"
+ 
+ editors_choice: 选择已获得编辑选择奖的图像
+ 可接受: "true", "false"
+ 默认: "false"
+ 
+ safesearch: 安全搜索，返回适用于所有年龄段的图像
+ 可接受: "true", "false"
+ 默认: "false"
+ 
+ order  排序
+ 可接受: "popular", "latest"
+ 默认: "popular"
+ 
+ page:  页数
+ 默认: 1
+ 
+ per_page:   一页个数
+ 可接受: 3 - 200
+ 默认: 20
+ */
+
 import Foundation
 import Alamofire
 import Kingfisher
 
 struct iSNetwork {
-    private enum iSURLStyle {
-        case gallery
-        case search
-        case random
+    enum Order: Int {
+        case latest
+        case popular
     }
     
     private static var downloadTask: DownloadTask?
     
     // MARK: < API >
-    static func gallery(_ page: Int = 1, handler: @escaping (Any?)->()) {
-        let urlString = "https://pixabay.com/api/?key=\(iSPixabayAccesskey)&editors_choice=true&page=\(page)&per_page=15"
+    static func gallery(_ page: Int = 1, order: Order = .popular, handler: @escaping (Any?)->()) {
+        var urlString = ""
+        switch order {
+        case .latest:
+            urlString = "https://pixabay.com/api/?key=\(iSPixabayAccesskey)&editors_choice=true&page=\(page)&per_page=15&order=latest"
+        case .popular:
+            urlString = "https://pixabay.com/api/?key=\(iSPixabayAccesskey)&editors_choice=true&page=\(page)&per_page=15&order=popular"
+        }
         if let url = URL.init(string: urlString) {
-            if let cache = value(for: url.path, page: page), let date = cache["date"] as? Date, let value = cache["value"] {
+            if let cache = value(for: urlString, page: page), let date = cache["date"] as? Date, let value = cache["value"] {
                 if compareDate(date) {  // 超过时长
                     AF.request(url).responseJSON { (resopnse) in
                         if let vue = resopnse.value {
-                            save(vue, for: url.path, page: page)
+                            save(vue, for: urlString, page: page)
                         }
                         handler(resopnse.value)
                     }
@@ -37,7 +92,7 @@ struct iSNetwork {
             } else {    // 没有缓存
                 AF.request(url).responseJSON { (resopnse) in
                     if let vue = resopnse.value {
-                        save(vue, for: url.path, page: page)
+                        save(vue, for: urlString, page: page)
                     }
                     handler(resopnse.value)
                 }
@@ -74,32 +129,9 @@ struct iSNetwork {
         }
     }
     
-    static func random(_ handler: @escaping (Any?)->()) {
-        let page = Int(arc4random() % 300 + 1)
-        let urlString = "https://pixabay.com/api/?key=\(iSPixabayAccesskey)&page=\(page)&per_page=1"
-        if let url = URL.init(string: urlString) {
-            if let cache = value(for: urlString, page: page), let date = cache["date"] as? Date, let value = cache["value"] {
-                if compareDate(date) {  // 超过时长
-                    AF.request(url).responseJSON { (resopnse) in
-                        if let vue = resopnse.value {
-                            save(vue, for: urlString, page: page)
-                        }
-                        handler(resopnse.value)
-                    }
-                } else {
-                    handler(value)
-                }
-            } else {    // 没有缓存
-                AF.request(url).responseJSON { (resopnse) in
-                    if let vue = resopnse.value {
-                        save(vue, for: urlString, page: page)
-                    }
-                    handler(resopnse.value)
-                }
-            }
-        } else {
-            handler(nil)
-        }
+    static func random(_ handler: @escaping (URL?)->()) {
+        let urlString = "https://source.unsplash.com/random"
+        download(urlString, completion: handler)
     }
     
     static func download(_ urlString: String, progress:( (CGFloat)->())? = nil, completion: @escaping (URL?)->()) {
@@ -135,6 +167,15 @@ struct iSNetwork {
     
     static func cancelDownload() {
         downloadTask?.cancel()
+    }
+    
+    // MARK: < 拼接默认参数 >
+    private static func appendDefaultParameters(_ parameter: [String: Any]) -> [String: Any] {
+        var p = parameter
+        p["key"] = iSPixabayAccesskey
+        p["editors_choice"] = "true"
+        p["per_page"] = "15"
+        return p
     }
     
     // MARK: < 时间比较 >

@@ -7,8 +7,12 @@
 */
 
 "iSSetWallpaper" = "設置壁紙";
+"iSCategoryLast" = "最新";
+"iSCategoryHot" = "熱門";
+"iSCategoryPopular" = "流行";
 "iSSearchPlacholder" = "關鍵詞搜索";
 "iSSearchTitle" = "搜索";
+"iSSearchKeyword" = "請輸入關鍵詞";
 "iSDownloadAntiElection" = "反選";
 "iSDownloadDelete" = "刪除";
 "iSDownloadTitle" = "下載";

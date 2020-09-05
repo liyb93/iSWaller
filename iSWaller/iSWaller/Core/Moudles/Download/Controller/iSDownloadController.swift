@@ -28,6 +28,7 @@ class iSDownloadController: iSBaseController {
     }
     
     private func configUI() {
+        scrollView.scrollerStyle = .overlay
         scrollView.drawsBackground = false
         scrollView.backgroundColor = .clear
         clipView.drawsBackground = false

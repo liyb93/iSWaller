@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="iSRootController" customModule="iSWaller_Mac" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="iSRootController" customModule="iSWaller" customModuleProvider="target">
             <connections>
                 <outlet property="containView" destination="cRX-bd-MhN" id="WLL-LP-kyV"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -23,10 +23,10 @@
                 </customView>
             </subviews>
             <constraints>
-                <constraint firstItem="cRX-bd-MhN" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="006-Dq-Gx7"/>
-                <constraint firstAttribute="trailing" secondItem="cRX-bd-MhN" secondAttribute="trailing" id="Q7V-iS-2Uf"/>
-                <constraint firstAttribute="bottom" secondItem="cRX-bd-MhN" secondAttribute="bottom" id="grS-s3-4mC"/>
-                <constraint firstItem="cRX-bd-MhN" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="rCN-k2-Iqt"/>
+                <constraint firstItem="cRX-bd-MhN" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="4nq-HI-n2X"/>
+                <constraint firstItem="cRX-bd-MhN" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="frO-OZ-x96"/>
+                <constraint firstAttribute="bottom" secondItem="cRX-bd-MhN" secondAttribute="bottom" id="lhY-H5-U9r"/>
+                <constraint firstAttribute="trailing" secondItem="cRX-bd-MhN" secondAttribute="trailing" id="zqu-bG-v24"/>
             </constraints>
             <point key="canvasLocation" x="139" y="154"/>
         </customView>

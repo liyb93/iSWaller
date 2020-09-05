@@ -117,6 +117,16 @@ extension NSView {
     }
     
     // MARK: < Animation >
+    func translationAnimation(_ from: CATransform3D?, to: CATransform3D?, duration: CFTimeInterval = 0.5) {
+        let animation = CABasicAnimation.init(keyPath: "transform")
+        animation.duration = duration
+        animation.isRemovedOnCompletion = false
+        animation.fillMode = .forwards
+        animation.fromValue = from
+        animation.toValue = to
+        layer?.add(animation, forKey: "translation.animation")
+    }
+    
     func startRotationAnimaton(_ clockwise: Bool = false) {
         wantsLayer = true
         let oldFrame = layer?.frame

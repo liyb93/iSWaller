@@ -23,4 +23,9 @@ extension NSButton {
         self.title = ""
         setButtonType(.radio)
     }
+    
+    func setTitleColor(_ color: NSColor) {
+        let att = NSAttributedString.init(string: title, attributes: [NSAttributedString.Key.foregroundColor: color])
+        attributedTitle = att
+    }
 }

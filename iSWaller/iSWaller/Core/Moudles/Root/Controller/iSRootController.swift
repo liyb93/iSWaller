@@ -57,6 +57,7 @@ class iSRootController: NSViewController {
         
         let firstView = children[0].view
         containView.addSubview(firstView)
+        
     }
 }
 

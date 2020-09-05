@@ -25,9 +25,15 @@ class iSGalleryController: iSBaseController {
     @IBOutlet weak var historyButton: NSButton!
     @IBOutlet weak var settingButton: NSButton!
     @IBOutlet weak var refreshButton: iSRefreshButton!
+    @IBOutlet weak var categoryView: iSCategoryView!
     
-    private var dataSource: [iSGalleryModel] = []
-    private var page: Int = 1
+    private var latests: [iSGalleryModel] = []
+    private var populars: [iSGalleryModel] = []
+    private var lastestPage: Int = 1
+    private var popularPage: Int = 1
+    // 最后滚动到的位置
+    private var lastestScrollOffset: CGPoint = .zero
+    private var popularScrollOffset: CGPoint = .zero
     // 是否请求下一页
     private var isRequestNextPage: Bool = false
     
@@ -51,6 +57,7 @@ class iSGalleryController: iSBaseController {
     private func configUI() {
         scrollView.drawsBackground = false
         scrollView.backgroundColor = .clear
+        scrollView.scrollerStyle = .overlay
         clipView.drawsBackground = false
         clipView.backgroundColor = .clear
         collectionView.backgroundColors = [.clear]
@@ -65,6 +72,7 @@ class iSGalleryController: iSBaseController {
         titleLabel.drawsBackground = false
         titleLabel.backgroundColor = .clear
         progressView.delegate = self
+        categoryView.delegate = self
         
         // 点击刷新
         refreshButton.didClickButtonHandler = { [unowned self] in
@@ -75,14 +83,29 @@ class iSGalleryController: iSBaseController {
     
     // MARK: < Network >
     private func previousPageData() {
-        page = 1
+        let order = iSNetwork.Order.init(rawValue: categoryView.selectedIndex) ?? .popular
+        lastestPage = 1
+        popularPage = 1
+        if order == .latest, latests.count > 0 {
+            collectionView.reloadData()
+            return
+        }
+        if order == .popular, populars.count > 0 {
+            collectionView.reloadData()
+            return
+        }
         iSHUDManager.show(to: view)
-        iSNetwork.gallery { [unowned self] (result) in
+        iSNetwork.gallery(order: order) { (result) in
             iSHUDManager.hide(to: self.view)
             self.refreshButton.stopAnimaton()
             if let hits = result as? [String: Any], let data = hits["hits"] {
                 let arr = (Array<iSGalleryModel>.deserialize(from: data as? [Any]) as? [iSGalleryModel]) ?? []
-                self.dataSource.append(contentsOf: arr)
+                switch order {
+                case .latest:
+                    self.latests.append(contentsOf: arr)
+                case .popular:
+                    self.populars.append(contentsOf: arr)
+                }
                 self.collectionView.reloadData()
             } else {
                 let text = NSLocalizedString("iSNetworkFailed", comment: "未请求到数据，请稍后重试")
@@ -92,9 +115,18 @@ class iSGalleryController: iSBaseController {
     }
     
     private func nextPageData() {
-        page += 1
+        let order = iSNetwork.Order.init(rawValue: categoryView.selectedIndex) ?? .popular
+        var page: Int!
+        switch order {
+        case .popular:
+            popularPage += 1
+            page = popularPage
+        case .latest:
+            lastestPage += 1
+            page = lastestPage
+        }
         iSHUDManager.show(to: view)
-        iSNetwork.gallery(page) { [unowned self] (result) in
+        iSNetwork.gallery(page, order: order) { [unowned self] (result) in
             iSHUDManager.hide(to: self.view)
             if let hits = result as? [String: Any], let data = hits["hits"] {
                 let arr = (Array<iSGalleryModel>.deserialize(from: data as? [Any]) as? [iSGalleryModel]) ?? []
@@ -102,12 +134,22 @@ class iSGalleryController: iSBaseController {
                     let text = NSLocalizedString("iSNoMoreData", comment: "没有更多数据了")
                     iSHUDManager.show(to: self.view, text: text, delay: 2)
                 } else {
-                    self.dataSource.append(contentsOf: arr)
+                    switch order {
+                    case .latest:
+                        self.latests.append(contentsOf: arr)
+                    case .popular:
+                        self.populars.append(contentsOf: arr)
+                    }
                     self.collectionView.reloadData()
                 }
             } else {
-                self.page -= 1
-                let text = NSLocalizedString("iSNoMoreData", comment: "没有更多数据了")
+                switch order {
+                case .latest:
+                    self.lastestPage -= 1
+                case .popular:
+                    self.popularPage -= 1
+                }
+                let text = NSLocalizedString("iSNetworkFailed", comment: "未请求到数据，请稍后重试")
                 iSHUDManager.show(to: self.view, text: text, delay: 2)
             }
         }
@@ -141,6 +183,12 @@ class iSGalleryController: iSBaseController {
         if isRequestNextPage {
             nextPageData()
         }
+        if categoryView.selectedIndex == 0 {
+            lastestScrollOffset = scrollView.contentView.bounds.origin
+        } else {
+            popularScrollOffset = scrollView.contentView.bounds.origin
+        }
+        print(lastestScrollOffset, popularScrollOffset)
     }
     
     @objc private func updateImageQualityAction() {
@@ -148,19 +196,30 @@ class iSGalleryController: iSBaseController {
     }
     
     @objc private func cleanCacheAction() {
-        dataSource = []
+        latests.removeAll()
+        populars.removeAll()
         previousPageData()
     }
 }
 
 extension iSGalleryController: NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource.count
+        if categoryView.selectedIndex == 0 {
+            return latests.count
+        } else {
+            return populars.count
+        }
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.image"), for: indexPath) as! iSImageItem
-        item.gallery = dataSource[indexPath.item]
+        var gallery: iSGalleryModel!
+        if categoryView.selectedIndex == 0 {
+            gallery = latests[indexPath.item]
+        } else {
+            gallery = populars[indexPath.item]
+        }
+        item.gallery = gallery
         item.delegate = self
         return item
     }
@@ -194,5 +253,16 @@ extension iSGalleryController: iSImageItemDelegate {
 extension iSGalleryController: iSDownloadProgressViewDelegate {
     func downloadProgressView(didClickCancelButton view: iSDownloadProgressView) {
         iSNetwork.cancelDownload()
+    }
+}
+
+extension iSGalleryController: iSCategoryViewDelegate {
+    func categoryView(_ view: iSCategoryView, didSelectItemAt index: Int) {
+        if index == 0 {
+            collectionView.scroll(lastestScrollOffset)
+        } else {
+            collectionView.scroll(popularScrollOffset)
+        }
+        previousPageData()
     }
 }

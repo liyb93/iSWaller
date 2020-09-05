@@ -31,6 +31,7 @@ class iSSearchController: iSBaseController {
     }
     
     private func configUI() {
+        scrollView.scrollerStyle = .overlay
         scrollView.drawsBackground = false
         scrollView.backgroundColor = .clear
         clipView.drawsBackground = false
@@ -56,7 +57,7 @@ class iSSearchController: iSBaseController {
         let keyword = navigationBar.titleLabel.stringValue
         if keyword.count <= 0 {
             refreshButton.stopAnimaton()
-            iSHUDManager.show(to: self.view, text: "请输入关键词", delay: 2)
+            iSHUDManager.show(to: self.view, text: NSLocalizedString("iSSearchKeyword", comment: "请输入关键词"), delay: 2)
             return
         }
         iSHUDManager.show(to: view)

@@ -7,8 +7,12 @@
 */
 
 "iSSetWallpaper" = "Set wallpaper";
+"iSCategoryLast" = "New";
+"iSCategoryHot" = "Hot";
+"iSCategoryPopular" = "Popular";
 "iSSearchPlacholder" = "keyword search";
 "iSSearchTitle" = "Search";
+"iSSearchKeyword" = "Please enter a keyword";
 "iSDownloadAntiElection" = "Inverse";
 "iSDownloadDelete" = "Delete";
 "iSDownloadTitle" = "Download";

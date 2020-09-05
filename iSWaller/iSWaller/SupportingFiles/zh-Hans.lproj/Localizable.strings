@@ -7,8 +7,12 @@
 */
 
 "iSSetWallpaper" = "设置壁纸";
+"iSCategoryLast" = "最新";
+"iSCategoryHot" = "热门";
+"iSCategoryPopular" = "流行";
 "iSSearchPlacholder" = "关键词搜索";
 "iSSearchTitle" = "搜索";
+"iSSearchKeyword" = "请输入关键词";
 "iSDownloadAntiElection" = "反选";
 "iSDownloadDelete" = "删除";
 "iSDownloadTitle" = "下载";
