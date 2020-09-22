@@ -61,7 +61,7 @@ class iSGalleryController: iSBaseController {
         clipView.drawsBackground = false
         clipView.backgroundColor = .clear
         collectionView.backgroundColors = [.clear]
-        collectionView.register(iSImageItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.image"))
+        collectionView.register(iSImageItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.liyb.image"))
         searchButton.setImage(NSImage.init(named: "nav_search"))
         historyButton.setImage(NSImage.init(named: "nav_download"))
         settingButton.setImage(NSImage.init(named: "nav_setting"))
@@ -212,7 +212,7 @@ extension iSGalleryController: NSCollectionViewDataSource, NSCollectionViewDeleg
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.image"), for: indexPath) as! iSImageItem
+        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.liyb.image"), for: indexPath) as! iSImageItem
         var gallery: iSGalleryModel!
         if categoryView.selectedIndex == 0 {
             gallery = latests[indexPath.item]

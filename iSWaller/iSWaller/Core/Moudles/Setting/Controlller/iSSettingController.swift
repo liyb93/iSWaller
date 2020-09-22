@@ -39,11 +39,11 @@ class iSSettingController: iSBaseController {
         clipView.drawsBackground = false
         clipView.backgroundColor = .clear
         collectionView.backgroundColors = [.clear]
-        collectionView.register(iSSettingSelectedItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.selected"))
-        collectionView.register(iSSettingChooseItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.choose"))
-        collectionView.register(iSSettingChangeItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.change"))
-        collectionView.register(iSSettingConfigItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.config"))
-        collectionView.register(iSSettingActionItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.action"))
+        collectionView.register(iSSettingSelectedItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.liyb.selected"))
+        collectionView.register(iSSettingChooseItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.liyb.choose"))
+        collectionView.register(iSSettingChangeItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.liyb.change"))
+        collectionView.register(iSSettingConfigItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.liyb.config"))
+        collectionView.register(iSSettingActionItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.liyb.action"))
         navigationBar.backButton.addTarget(self, action: #selector(backDidClickAction(_:)))
         navigationBar.titleLabel.stringValue = NSLocalizedString("iSSettingTitle", comment: "设置")
         navigationBar.rightButton.setImage(NSImage.init(named: "nav_exit"))
@@ -93,27 +93,27 @@ extension iSSettingController: NSCollectionViewDataSource, NSCollectionViewDeleg
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let data = dataSource[indexPath.item]
         if indexPath.item <= 2 {
-            let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init("is.selected"), for: indexPath) as! iSSettingSelectedItem
+            let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init("is.liyb.selected"), for: indexPath) as! iSSettingSelectedItem
             item.data = data
             item.delegate = self
             return item
         } else if indexPath.item <= 4 {
-            let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init("is.choose"), for: indexPath) as! iSSettingChooseItem
+            let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init("is.liyb.choose"), for: indexPath) as! iSSettingChooseItem
             item.data = data
             item.delegate = self
             return item
         } else if indexPath.item == 5 {
-            let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init("is.change"), for: indexPath) as! iSSettingChangeItem
+            let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init("is.liyb.change"), for: indexPath) as! iSSettingChangeItem
             item.data = data
             item.delegate = self
             return item
         } else if indexPath.item == 6 {
-            let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init("is.config"), for: indexPath) as! iSSettingConfigItem
+            let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init("is.liyb.config"), for: indexPath) as! iSSettingConfigItem
             item.data = data
             item.delegate = self
             return item
         } else {
-            let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init("is.action"), for: indexPath) as! iSSettingActionItem
+            let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init("is.liyb.action"), for: indexPath) as! iSSettingActionItem
             item.data = data
             item.delegate = self
             return item

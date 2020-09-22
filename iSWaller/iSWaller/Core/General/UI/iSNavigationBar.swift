@@ -37,15 +37,11 @@ class iSNavigationBar: NSView {
         return button
    }()
     
-    var isSearch: Bool = false {
+    var titleView: NSView? {
         didSet {
-            if isSearch {
-                titleLabel.isEditable = true
-                titleLabel.alignment = .center
-                titleLabel.font = NSFont.systemFont(ofSize: 15)
-                titleLabel.isBordered = true
-                titleLabel.isBezeled = true
-                titleLabel.bezelStyle = .squareBezel
+            if let view = titleView {
+                addSubview(view)
+                titleLabel.removeFromSuperview()
             }
         }
     }
@@ -80,10 +76,20 @@ class iSNavigationBar: NSView {
             make.right.equalToSuperview().offset(-10)
             make.width.equalTo(30)
         }
-        titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(backButton.snp.right).offset(10)
-            make.right.equalTo(rightButton.snp.left).offset(-10)
-            make.centerY.equalToSuperview()
+        if let view = titleView {
+            view.snp.makeConstraints({ (make) in
+                make.left.equalTo(backButton.snp.right).offset(10)
+                make.right.equalTo(rightButton.snp.left).offset(-10)
+                make.top.equalToSuperview().offset(5)
+                make.bottom.equalToSuperview().offset(-5)
+            })
+        } else {
+            titleLabel.snp.makeConstraints { (make) in
+                make.left.equalTo(backButton.snp.right).offset(10)
+                make.right.equalTo(rightButton.snp.left).offset(-10)
+                make.top.equalToSuperview().offset(5)
+                make.bottom.equalToSuperview().offset(-5)
+            }
         }
     }
 }

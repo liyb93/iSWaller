@@ -1,6 +1,14 @@
-<div align=center>
-<img src="https://raw.githubusercontent.com/liyb93/iSWaller/master/screenshot/icon.png"/>
-</div>
+<p align="center">
+<img src="https://raw.githubusercontent.com/liyb93/iSWaller/master/screenshot/icon.png" alt="iSWaller" title="iSWaller" width="200"/>
+</p>
+<p align="center">
+<a href="https://github.com/liyb93/iSWaller"><img src="https://img.shields.io/badge/platform-osx-lightgrey"></a>
+<a href="https://github.com/liyb93/iSWaller"><img src="https://img.shields.io/badge/support-macOS%2010.14%2B-orange"></a>
+<a href="https://github.com/liyb93/iSWaller"><img src="https://img.shields.io/badge/language-swift%205.x-orange"></a>
+<a href="https://github.com/liyb93/iSWaller"><img src="https://img.shields.io/github/stars/liyb93/iSWaller"></a>
+<a href="https://raw.githubusercontent.com/liyb93/iSWaller/master/LICENSE"><img src="https://img.shields.io/github/license/liyb93/iSWaller"></a>
+</p>
+
 
 
 # 声明

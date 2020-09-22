@@ -116,6 +116,12 @@ extension NSView {
         layer?.masksToBounds = true
     }
     
+    func setBorder(_ color: NSColor, width: CGFloat = 1.0) {
+        wantsLayer = true
+        layer?.borderColor = color.cgColor
+        layer?.borderWidth = width
+    }
+    
     // MARK: < Animation >
     func translationAnimation(_ from: CATransform3D?, to: CATransform3D?, duration: CFTimeInterval = 0.5) {
         let animation = CABasicAnimation.init(keyPath: "transform")

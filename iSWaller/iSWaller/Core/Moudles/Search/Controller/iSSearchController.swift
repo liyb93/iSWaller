@@ -17,6 +17,24 @@ class iSSearchController: iSBaseController {
     @IBOutlet weak var refreshButton: iSRefreshButton!
     @IBOutlet weak var progressView: iSDownloadProgressView!
     
+    private lazy var searchBar: iSSearchBar = {
+        let bar = iSSearchBar.init()
+        bar.delegate = self
+        bar.searchTextField.placeholderString = NSLocalizedString("iSSearchPlacholder", comment: "关键词搜索")
+        return bar
+    }()
+    
+    private lazy var colorPopover: NSPopover = {
+        let p = NSPopover.init()
+        p.appearance = NSAppearance.init(named: .darkAqua)
+        let colorController = iSColorController.init()
+        colorController.delegate = self
+        p.contentViewController = colorController
+        p.behavior = .applicationDefined
+        return p
+    }()
+    
+    private var monitor: iSEventMonitor!
     private var dataSource: [iSGalleryModel] = []
     private var page: Int = 1
     // 是否请求下一页
@@ -37,10 +55,9 @@ class iSSearchController: iSBaseController {
         clipView.drawsBackground = false
         clipView.backgroundColor = .clear
         collectionView.backgroundColors = [.clear]
-        collectionView.register(iSImageItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.image"))
+        collectionView.register(iSImageItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.liyb.image"))
         navigationBar.backButton.addTarget(self, action: #selector(backDidClickAction(_:)))
-        navigationBar.isSearch = true
-        navigationBar.titleLabel.placeholderString = NSLocalizedString("iSSearchPlacholder", comment: "关键词搜索")
+        navigationBar.titleView = self.searchBar
         navigationBar.rightButton.setTitle(NSLocalizedString("iSSearchTitle", comment: "搜索"))
         navigationBar.rightButton.addTarget(self, action: #selector(searchDidClickAction))
         progressView.delegate = self
@@ -48,12 +65,20 @@ class iSSearchController: iSBaseController {
         // 点击刷新
         refreshButton.didClickButtonHandler = { [unowned self] in
             self.collectionView.scroll(.zero)
-            self.searchGallery()
+            let color = searchBar.colors?["title"]
+            self.searchGallery(color: color)
+        }
+        
+        // 事件监听
+        monitor = iSEventMonitor.init([.leftMouseDown, .rightMouseDown]) { [unowned self] (event) -> (Void) in
+            if self.colorPopover.isShown {
+                self.colorPopover.performClose(event)
+            }
         }
     }
     
     // MARK: < Network >
-    private func searchGallery(_ isChange: Bool = false, page: Int = 1) {
+    private func searchGallery(_ isChange: Bool = false, color: String? = nil, page: Int = 1) {
         let keyword = navigationBar.titleLabel.stringValue
         if keyword.count <= 0 {
             refreshButton.stopAnimaton()
@@ -61,7 +86,7 @@ class iSSearchController: iSBaseController {
             return
         }
         iSHUDManager.show(to: view)
-        iSNetwork.search(keyword, page: page) { [unowned self] (result) in
+        iSNetwork.search(keyword, page: page, color: color) { [unowned self] (result) in
             iSHUDManager.hide(to: self.view)
             self.refreshButton.stopAnimaton()
             if let hits = result as? [String: Any], let data = hits["hits"] {
@@ -90,11 +115,15 @@ class iSSearchController: iSBaseController {
     }
     
     @objc private func searchDidClickAction() {
-        navigationBar.titleLabel.resignFirstResponder()
-        searchGallery(true)
+        searchBar.searchTextField.window?.makeFirstResponder(self.view)
+        let color = searchBar.colors?["title"]
+        searchGallery(true, color: color)
     }
     
     @objc private func scrollViewDidScroll() {
+        if let search = navigationBar.titleView as? iSSearchBar, search.searchTextField.stringValue.count <= 0 {
+            return
+        }
         let offsetY = scrollView.contentView.bounds.origin.y
         let contentHeight = scrollView.documentView?.bounds.height  ?? 0
         let height = contentHeight - scrollView.contentSize.height
@@ -108,18 +137,20 @@ class iSSearchController: iSBaseController {
     @objc private func scrollViewDidEndScroll() {
         if isRequestNextPage {
             page += 1
-            searchGallery(page: page)
+            let color = searchBar.colors?["title"]
+            searchGallery(color: color, page: page)
         }
     }
 }
 
 extension iSSearchController: NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+        refreshButton.isHidden = dataSource.count > 0 ? false : true
         return dataSource.count
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.image"), for: indexPath) as! iSImageItem
+        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.liyb.image"), for: indexPath) as! iSImageItem
         item.gallery = dataSource[indexPath.item]
         item.delegate = self
         return item
@@ -154,5 +185,26 @@ extension iSSearchController: iSImageItemDelegate {
 extension iSSearchController: iSDownloadProgressViewDelegate {
     func downloadProgressView(didClickCancelButton view: iSDownloadProgressView) {
         iSNetwork.cancelDownload()
+    }
+}
+
+extension iSSearchController: iSSearchBarDelegate {
+    func searchBar(didClickedColor searchBar: iSSearchBar) {
+        searchBar.searchTextField.window?.makeFirstResponder(self.view)
+        if colorPopover.isShown {
+            colorPopover.performClose(searchBar.colorButton)
+            monitor.stop()
+        } else {
+            colorPopover.show(relativeTo: searchBar.colorButton.bounds, of: searchBar.colorButton, preferredEdge: .maxY)
+            monitor.start()
+        }
+    }
+}
+
+extension iSSearchController: iSColorControllerDelegate {
+    func colorController(_ controller: iSColorController, didSelectItemAt colors: [String : String]) {
+        searchBar.colors = colors
+        monitor.stop()
+        colorPopover.performClose(searchBar.colorButton)
     }
 }

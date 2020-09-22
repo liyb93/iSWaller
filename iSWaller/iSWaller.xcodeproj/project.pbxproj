@@ -54,6 +54,8 @@
 		EAAB51B924AC6208003710F0 /* iSBaseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAAB51B724AC6208003710F0 /* iSBaseController.xib */; };
 		EAAB51BC24AC9D10003710F0 /* iSNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB51BB24AC9D10003710F0 /* iSNavigationControllerDelegate.swift */; };
 		EAAC689D24ADEAC3001E060B /* iSDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC689C24ADEAC3001E060B /* iSDataManager.swift */; };
+		EAC1603E2514B84B00C47E57 /* iSColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1603C2514B84B00C47E57 /* iSColorController.swift */; };
+		EAC1603F2514B84B00C47E57 /* iSColorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAC1603D2514B84B00C47E57 /* iSColorController.xib */; };
 		EAC7C6DC24B040E2003C9BB5 /* iSDownloadProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC7C6DB24B040E2003C9BB5 /* iSDownloadProgressView.swift */; };
 		EAC7C6DF24B051A0003C9BB5 /* iSDownloadItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC7C6DD24B051A0003C9BB5 /* iSDownloadItem.swift */; };
 		EAC7C6E024B051A0003C9BB5 /* iSDownloadItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAC7C6DE24B051A0003C9BB5 /* iSDownloadItem.xib */; };
@@ -67,6 +69,9 @@
 		EACDA04B2502152800C1C489 /* Dictionary+iSWaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDA04A2502152800C1C489 /* Dictionary+iSWaller.swift */; };
 		EAD51CE224AF83B500ADD22B /* iSHUDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD51CE124AF83B500ADD22B /* iSHUDManager.swift */; };
 		EAE0839024B6DCC1009910F9 /* iSDownloadSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0838F24B6DCC1009910F9 /* iSDownloadSelectView.swift */; };
+		EAE100D6250A3FF300DBBD67 /* iSColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE100D4250A3FF300DBBD67 /* iSColorItem.swift */; };
+		EAE100D7250A3FF300DBBD67 /* iSColorItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAE100D5250A3FF300DBBD67 /* iSColorItem.xib */; };
+		EAE100D9250A414F00DBBD67 /* iSSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE100D8250A414F00DBBD67 /* iSSearchBar.swift */; };
 		EAE5E51325008EDA00AD7CEE /* iSRefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5E51225008EDA00AD7CEE /* iSRefreshButton.swift */; };
 		EAF46D1824C59175003A8586 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAF46D1A24C59175003A8586 /* Localizable.strings */; };
 		FD05FACEC34FF5BB6187C2FF /* Pods_iSWaller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D839D2002310B1047742043 /* Pods_iSWaller.framework */; };
@@ -187,6 +192,8 @@
 		EAAB51B724AC6208003710F0 /* iSBaseController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = iSBaseController.xib; sourceTree = "<group>"; };
 		EAAB51BB24AC9D10003710F0 /* iSNavigationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSNavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		EAAC689C24ADEAC3001E060B /* iSDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSDataManager.swift; sourceTree = "<group>"; };
+		EAC1603C2514B84B00C47E57 /* iSColorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSColorController.swift; sourceTree = "<group>"; };
+		EAC1603D2514B84B00C47E57 /* iSColorController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = iSColorController.xib; sourceTree = "<group>"; };
 		EAC7C6DB24B040E2003C9BB5 /* iSDownloadProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSDownloadProgressView.swift; sourceTree = "<group>"; };
 		EAC7C6DD24B051A0003C9BB5 /* iSDownloadItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSDownloadItem.swift; sourceTree = "<group>"; };
 		EAC7C6DE24B051A0003C9BB5 /* iSDownloadItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = iSDownloadItem.xib; sourceTree = "<group>"; };
@@ -202,6 +209,9 @@
 		EAD51CDD24AF800200ADD22B /* iSWaller-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iSWaller-Bridging-Header.h"; sourceTree = "<group>"; };
 		EAD51CE124AF83B500ADD22B /* iSHUDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSHUDManager.swift; sourceTree = "<group>"; };
 		EAE0838F24B6DCC1009910F9 /* iSDownloadSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSDownloadSelectView.swift; sourceTree = "<group>"; };
+		EAE100D4250A3FF300DBBD67 /* iSColorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSColorItem.swift; sourceTree = "<group>"; };
+		EAE100D5250A3FF300DBBD67 /* iSColorItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = iSColorItem.xib; sourceTree = "<group>"; };
+		EAE100D8250A414F00DBBD67 /* iSSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSSearchBar.swift; sourceTree = "<group>"; };
 		EAE5E51225008EDA00AD7CEE /* iSRefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSRefreshButton.swift; sourceTree = "<group>"; };
 		EAF46CFC24C59066003A8586 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		EAF46CFD24C59066003A8586 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -313,6 +323,7 @@
 		EA084BC424AB3BA500BAD17E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EAE100D8250A414F00DBBD67 /* iSSearchBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -478,6 +489,7 @@
 				EA084BB924AB305F00BAD17E /* Download */,
 				EA084BC924AB3BC700BAD17E /* Setting */,
 				EA084BDC24AB3E8600BAD17E /* About */,
+				EAC160442514BBDA00C47E57 /* Color */,
 			);
 			path = Moudles;
 			sourceTree = "<group>";
@@ -570,6 +582,33 @@
 				EAAB51BB24AC9D10003710F0 /* iSNavigationControllerDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		EAC160442514BBDA00C47E57 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				EAC160452514BBF900C47E57 /* View */,
+				EAC1604A2514BC0600C47E57 /* Controller */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		EAC160452514BBF900C47E57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EAE100D4250A3FF300DBBD67 /* iSColorItem.swift */,
+				EAE100D5250A3FF300DBBD67 /* iSColorItem.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EAC1604A2514BC0600C47E57 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EAC1603C2514B84B00C47E57 /* iSColorController.swift */,
+				EAC1603D2514B84B00C47E57 /* iSColorController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		EAC7C70A24B218D2003C9BB5 /* iSWaller_Helper */ = {
@@ -710,7 +749,9 @@
 				EA2F528C24BEC6D2007EEC45 /* iSSettingActionItem.xib in Resources */,
 				EA084BBF24AB308D00BAD17E /* iSDownloadController.xib in Resources */,
 				EA084BDB24AB3C1800BAD17E /* iSSearchController.xib in Resources */,
+				EAC1603F2514B84B00C47E57 /* iSColorController.xib in Resources */,
 				EA084BE324AB3EB100BAD17E /* iSAboutController.xib in Resources */,
+				EAE100D7250A3FF300DBBD67 /* iSColorItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,6 +824,7 @@
 				EA15AE2B248E4F5300191A5B /* iSEventMonitor.swift in Sources */,
 				EA53B21024B4697D00976AC0 /* iSDownloadModel.swift in Sources */,
 				EA2F528324BEC69F007EEC45 /* iSSettingChangeItem.swift in Sources */,
+				EAE100D9250A414F00DBBD67 /* iSSearchBar.swift in Sources */,
 				EA2F528724BEC6C1007EEC45 /* iSSettingConfigItem.swift in Sources */,
 				EA60E89D24AF21BC00AACC7C /* String+iSWaller.swift in Sources */,
 				EAAB51AB24AC32A4003710F0 /* iSNavigationBar.swift in Sources */,
@@ -798,6 +840,7 @@
 				EA9BB7A524C6E54D0026C048 /* MBProgressHUD.m in Sources */,
 				EAC7C6DF24B051A0003C9BB5 /* iSDownloadItem.swift in Sources */,
 				EA084BE224AB3EB100BAD17E /* iSAboutController.swift in Sources */,
+				EAE100D6250A3FF300DBBD67 /* iSColorItem.swift in Sources */,
 				EA4EFC07248F0A2300EF9DE7 /* iSImageItem.swift in Sources */,
 				EAAB51BC24AC9D10003710F0 /* iSNavigationControllerDelegate.swift in Sources */,
 				EA084BF524AB4D9E00BAD17E /* iSRootController.swift in Sources */,
@@ -810,6 +853,7 @@
 				EA084BBE24AB308D00BAD17E /* iSDownloadController.swift in Sources */,
 				EA60E89B24AEE0BC00AACC7C /* iSNetwork.swift in Sources */,
 				EA60E89F24AF21F400AACC7C /* iSCacheHelper.swift in Sources */,
+				EAC1603E2514B84B00C47E57 /* iSColorController.swift in Sources */,
 				EA2F527F24BEC682007EEC45 /* iSSettingChooseItem.swift in Sources */,
 				EA084B8C24AB16F400BAD17E /* iSGalleryController.swift in Sources */,
 			);
@@ -1027,7 +1071,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.liyb.iSWaller;
 				PRODUCT_NAME = iSWaller;
 				SWIFT_OBJC_BRIDGING_HEADER = "iSWaller/SupportingFiles/iSWaller-Bridging-Header.h";
@@ -1056,7 +1100,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.liyb.iSWaller;
 				PRODUCT_NAME = iSWaller;
 				SWIFT_OBJC_BRIDGING_HEADER = "iSWaller/SupportingFiles/iSWaller-Bridging-Header.h";
@@ -1081,7 +1125,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liyb.iSWallerHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1107,7 +1151,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liyb.iSWallerHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";

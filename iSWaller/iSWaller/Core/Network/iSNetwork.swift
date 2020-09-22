@@ -102,8 +102,13 @@ struct iSNetwork {
         }
     }
     
-    static func search(_ keyword: String, page: Int = 1,  handler: @escaping (Any?)->()) {
-        let urlString = "https://pixabay.com/api/?key=\(iSPixabayAccesskey)&editors_choice=true&page=\(page)&per_page=15&q=\(keyword)"
+    static func search(_ keyword: String, page: Int = 1, color: String? = nil, handler: @escaping (Any?)->()) {
+        var urlString: String = ""
+        if let c = color {
+            urlString = "https://pixabay.com/api/?key=\(iSPixabayAccesskey)&editors_choice=true&page=\(page)&per_page=15&q=\(keyword)&colors=\(c)"
+        } else {
+            urlString = "https://pixabay.com/api/?key=\(iSPixabayAccesskey)&editors_choice=true&page=\(page)&per_page=15&q=\(keyword)"
+        }
         if let url = URL.init(string: urlString) {
             if let cache = value(for: urlString, page: page), let date = cache["date"] as? Date, let value = cache["value"] {
                 if compareDate(date) {  // 超过时长

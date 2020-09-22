@@ -34,7 +34,7 @@ class iSDownloadController: iSBaseController {
         clipView.drawsBackground = false
         clipView.backgroundColor = .clear
         collectionView.backgroundColors = [.clear]
-        collectionView.register(iSDownloadItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.download"))
+        collectionView.register(iSDownloadItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.liyb.download"))
         navigationBar.backButton.addTarget(self, action: #selector(backDidClickAction(_:)))
         navigationBar.titleLabel.stringValue = NSLocalizedString("iSDownloadTitle", comment: "下载")
         navigationBar.rightButton.setImage(NSImage.init(named: "nav_edit"))
@@ -103,7 +103,7 @@ extension iSDownloadController: NSCollectionViewDelegateFlowLayout, NSCollection
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.download"), for: indexPath) as! iSDownloadItem
+        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "is.liyb.download"), for: indexPath) as! iSDownloadItem
         item.data = dataSource[indexPath.item]
         item.isEditing = isEditing
         item.delegate = self

@@ -135,7 +135,8 @@ class iSDataManager: NSObject {
     // MARK: < Cofig info >
     var isStartUp: Bool {   // 开启自启
         get {
-            return UserDefaults.standard.bool(forKey: iSDataKey.startUp.rawValue)
+            let value = UserDefaults.standard.bool(forKey: iSDataKey.startUp.rawValue)
+            return value
         }
         set {
             UserDefaults.standard.set(newValue, forKey: iSDataKey.startUp.rawValue)

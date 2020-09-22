@@ -16,7 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return item
     }()
     
-    private lazy var popver: NSPopover = {
+    private lazy var popover: NSPopover = {
         let p = NSPopover.init()
         p.appearance = NSAppearance.init(named: .darkAqua)
         p.contentViewController = iSRootController.init()
@@ -33,8 +33,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // 自动更换
         iSDataManager.shared.startAutoChangeWallpaper()
         monitor = iSEventMonitor.init([.leftMouseDown, .rightMouseDown]) { [unowned self] (event) -> (Void) in
-            if self.popver.isShown {
-                self.popver.performClose(event)
+            if self.popover.isShown {
+                self.popover.performClose(event)
             }
         }
     }
@@ -52,13 +52,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc private func openMainMenu(_ button: NSStatusBarButton) {
-        if popver.isShown {
-            popver.performClose(button)
+        if popover.isShown {
+            popover.performClose(button)
             monitor.stop()
         } else {
-            popver.show(relativeTo: button.bounds, of: button, preferredEdge: .maxY)
+            popover.show(relativeTo: button.bounds, of: button, preferredEdge: .maxY)
             monitor.start()
-            popver.contentViewController?.becomeFirstResponder()
+            popover.contentViewController?.becomeFirstResponder()
         }
     }
 }
