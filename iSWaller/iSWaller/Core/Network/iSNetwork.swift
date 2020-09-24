@@ -134,14 +134,7 @@ struct iSNetwork {
         }
     }
     
-    static func random(_ handler: @escaping (URL?)->()) {
-        let urlString = "https://source.unsplash.com/random"
-        download(urlString, completion: handler)
-    }
-    
     static func download(_ urlString: String, progress:( (CGFloat)->())? = nil, completion: @escaping (URL?)->()) {
-        // 取消当前下载
-        cancelDownload()
         if let url = URL.init(string: urlString) {
             let fileName = url.path.md5()
             let filePath = iSDataManager.shared.wallpaperPath + "/\(fileName).jpg"

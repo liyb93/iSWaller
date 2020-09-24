@@ -52,6 +52,7 @@ class iSDataManager: NSObject {
         static let wallpaperType = iSDataKey.init("wallpaperType")
         static let previous = iSDataKey.init("previous")
         static let next = iSDataKey.init("next")
+        static let version = iSDataKey.init("version")
     }
     
     enum HotKeyType {
@@ -69,9 +70,21 @@ class iSDataManager: NSObject {
     
     override init() {
         super.init()
+        // 修复v1.0版本Bug，下载历史重复添加问题
+        if let version = appVersion {
+            switch compareVersion(version, "1.0") {
+            case .orderedDescending:
+                if UserDefaults.standard.object(forKey: iSDataKey.version.rawValue) == nil, let _ = try? FileManager.default.removeItem(atPath: cachePath + "/iSWaller.sqlite") {
+                    UserDefaults.standard.setValue("version", forKey: iSDataKey.version.rawValue)
+                }
+            default:
+                break
+            }
+        }
+        // 创建下载历史表
         if database?.open() ?? false {
             if let isExist = database?.tableExists("iSDownload"), isExist {} else {
-                let sql = "CREATE TABLE iSDownload(wid TEXT, fullUrl TEXT, mediumUrl TEXT, smallUrl TEXT,user TEXT);"
+                let sql = "CREATE TABLE iSDownload(wid TEXT PRIMARY KEY, fullUrl TEXT, mediumUrl TEXT, smallUrl TEXT,user TEXT);"
                 do {
                     try database?.executeUpdate(sql, values: nil)
                 } catch {

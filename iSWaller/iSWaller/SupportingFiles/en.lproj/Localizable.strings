@@ -62,3 +62,18 @@ Use iSWaller to keep your Mac desktop fresh!";
 "iSNetworkFailed" = "No data requested, please try again later";
 "iSNoMoreData" = "No more data";
 "iSDownloadError" = "Download failed";
+
+"iSGrayscaleColor" = "grayscale";
+"iSTransparentColor" = "transparent";
+"iSRedColor" = "red";
+"iSOrangeColor" = "orange";
+"iSYellowColor" = "yellow";
+"iSGreenColor" = "green";
+"iSTurquoiseColor" = "turquoise";
+"iSBlueColor" = "blue";
+"iSLilacColor" = "lilac";
+"iSPinkColor" = "pink";
+"iSWhiteColor" = "white";
+"iSGrayColor" = "gray";
+"iSBlackColor" = "black";
+"iSBrownColor" = "brown";

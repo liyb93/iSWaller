@@ -65,7 +65,7 @@ class iSSearchController: iSBaseController {
         // 点击刷新
         refreshButton.didClickButtonHandler = { [unowned self] in
             self.collectionView.scroll(.zero)
-            let color = searchBar.colors?["title"]
+            let color = searchBar.colors?["key"]
             self.searchGallery(color: color)
         }
         
@@ -108,6 +108,7 @@ class iSSearchController: iSBaseController {
     
     // MARK: < Action >
     @objc private func backDidClickAction(_ sender: Any) {
+        colorPopover.performClose(searchBar.colorButton)
         navigationDelegate?.navigationController(self, didClickBackButtonAt: .search)
         navigationBar.titleLabel.stringValue = ""
         dataSource = []
@@ -115,8 +116,9 @@ class iSSearchController: iSBaseController {
     }
     
     @objc private func searchDidClickAction() {
+        colorPopover.performClose(searchBar.colorButton)
         searchBar.searchTextField.window?.makeFirstResponder(self.view)
-        let color = searchBar.colors?["title"]
+        let color = searchBar.colors?["key"]
         searchGallery(true, color: color)
     }
     
@@ -137,7 +139,7 @@ class iSSearchController: iSBaseController {
     @objc private func scrollViewDidEndScroll() {
         if isRequestNextPage {
             page += 1
-            let color = searchBar.colors?["title"]
+            let color = searchBar.colors?["key"]
             searchGallery(color: color, page: page)
         }
     }

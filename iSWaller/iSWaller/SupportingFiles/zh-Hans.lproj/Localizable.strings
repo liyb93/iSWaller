@@ -62,3 +62,18 @@
 "iSNetworkFailed" = "未请求到数据，请稍后重试";
 "iSNoMoreData" = "没有更多数据了";
 "iSDownloadError" = "下载失败";
+
+"iSGrayscaleColor" = "灰度";
+"iSTransparentColor" = "透明";
+"iSRedColor" = "红色";
+"iSOrangeColor" = "橙色";
+"iSYellowColor" = "黄色";
+"iSGreenColor" = "绿色";
+"iSTurquoiseColor" = "绿松石";
+"iSBlueColor" = "蓝色";
+"iSLilacColor" = "紫丁香";
+"iSPinkColor" = "粉红";
+"iSWhiteColor" = "白色";
+"iSGrayColor" = "灰色";
+"iSBlackColor" = "黑色";
+"iSBrownColor" = "棕色";
