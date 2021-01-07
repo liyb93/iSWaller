@@ -30,6 +30,9 @@ class iSSettingController: iSBaseController {
         super.viewDidLoad()
         configUI()
         configData()
+        
+        // 注册开机自启通知
+        NotificationCenter.default.addObserver(self, selector: #selector(configData), name: iSStartUpNotification, object: nil)
     }
     
     private func configUI() {
@@ -52,7 +55,7 @@ class iSSettingController: iSBaseController {
         horizontalLineView.setBackgroundColor(NSColor.separator)
     }
     
-    private func configData() {
+    @objc private func configData() {
         let start: [String: Any] = ["title": NSLocalizedString("iSSettingStartup", comment: "开机自启"), "select": iSDataManager.shared.isStartUp]
         let unite: [String: Any] = ["title": NSLocalizedString("iSSettingUnite", comment: "多屏统一"), "select": iSDataManager.shared.isUnite]
         let notification: [String: Any] = ["title": NSLocalizedString("iSSettingNotification", comment: "更换壁纸通知"), "select": iSDataManager.shared.isNotification]
@@ -145,6 +148,8 @@ extension iSSettingController: iSSettingSelectedItemDelegate, iSSettingChooseIte
             }
             if indexPath.item == 0 {
                 iSDataManager.shared.isStartUp = result
+                // 发送开机自启通知
+                NotificationCenter.default.post(name: iSStartUpNotification, object: nil)
             } else if indexPath.item == 1 {
                 iSDataManager.shared.isUnite = result
             } else {

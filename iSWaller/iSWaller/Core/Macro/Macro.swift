@@ -15,6 +15,8 @@ let iSPixabayAccesskey = "12956784-91c84f326fcbd73df660f8c5b"
 let iSUpdateImageQualityNotification = NSNotification.Name.init(rawValue: "is.updateImageQualityNotification")
 // 清理缓存
 let iSCleanCacheNotification = NSNotification.Name.init(rawValue: "is.cleanCacheNotification")
+// 开机自启
+let iSStartUpNotification = NSNotification.Name.init(rawValue: "is.startUpNotification")
 
 let iSAutoChangeTimes: [String] = [NSLocalizedString("iSAutoTimeOff", comment: "关"), NSLocalizedString("iSAutoTime15", comment: "15分钟"), NSLocalizedString("iSAutoTime30", comment: "30分钟"), NSLocalizedString("iSAutoTime45", comment: "45分钟"), NSLocalizedString("iSAutoTime60", comment: "1小时"), NSLocalizedString("iSAutoTime120", comment: "2小时"), NSLocalizedString("iSAutoTime1", comment: "1天")]
 let iSImageQualitys: [String] = [NSLocalizedString("iSPreviewQuilatySmall", comment: "低质量"), NSLocalizedString("iSPreviewQuilatyMedium", comment: "中等质量"), NSLocalizedString("iSPreviewQuilatyFull", comment: "高质量")]
