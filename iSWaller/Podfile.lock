@@ -7,6 +7,7 @@ PODS:
   - Kingfisher (5.14.0):
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
+  - LYBProgressHUD (1.0.0)
   - MASShortcut (2.4.0)
   - SnapKit (5.0.1)
 
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - FMDB
   - HandyJSON
   - Kingfisher
+  - LYBProgressHUD
   - MASShortcut
   - SnapKit
 
@@ -24,6 +26,7 @@ SPEC REPOS:
     - FMDB
     - HandyJSON
     - Kingfisher
+    - LYBProgressHUD
     - MASShortcut
     - SnapKit
 
@@ -32,9 +35,10 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  LYBProgressHUD: b394e7e5629a0d18baf0b03fa7e9f19c0465b838
   MASShortcut: d9e4909e878661cc42877cc9d6efbe638273ab57
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: bccb52b733f384fbd86597194805ca863a98413a
+PODFILE CHECKSUM: addf314cd7d2a679fcfc15a086c910ee70888282
 
 COCOAPODS: 1.9.1

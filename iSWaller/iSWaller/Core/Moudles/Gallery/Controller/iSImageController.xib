@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="iSImageController" customModule="iSWaller" customModuleProvider="target">
+            <connections>
+                <outlet property="clipView" destination="e8O-8U-pjS" id="J3P-5f-w7i"/>
+                <outlet property="collectionView" destination="qSR-iI-bHB" id="MOG-GV-Jrt"/>
+                <outlet property="refreshButton" destination="cfq-9k-yMF" id="bZz-0d-iZj"/>
+                <outlet property="scrollView" destination="Yy1-Kb-Z8t" id="tJt-mX-Byz"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="221" height="353"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yy1-Kb-Z8t">
+                    <rect key="frame" x="0.0" y="0.0" width="221" height="353"/>
+                    <clipView key="contentView" id="e8O-8U-pjS">
+                        <rect key="frame" x="1" y="1" width="219" height="351"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView id="qSR-iI-bHB">
+                                <rect key="frame" x="0.0" y="0.0" width="219" height="158"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" id="usd-WZ-DCx">
+                                    <size key="itemSize" width="50" height="50"/>
+                                </collectionViewFlowLayout>
+                                <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="-2" id="aMk-jB-qlD"/>
+                                    <outlet property="delegate" destination="-2" id="DqQ-Vl-M2M"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Ocs-0K-TQs">
+                        <rect key="frame" x="1" y="336" width="219" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="JNM-WF-wcm">
+                        <rect key="frame" x="234" y="1" width="15" height="143"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="cfq-9k-yMF" customClass="iSRefreshButton" customModule="iSWaller" customModuleProvider="target">
+                    <rect key="frame" x="10" y="50" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="LGA-br-HTj"/>
+                        <constraint firstAttribute="height" constant="40" id="yR7-29-eSN"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="cfq-9k-yMF" secondAttribute="bottom" constant="50" id="8tj-1S-FOo"/>
+                <constraint firstItem="Yy1-Kb-Z8t" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="Tkw-Cg-Bpn"/>
+                <constraint firstAttribute="bottom" secondItem="Yy1-Kb-Z8t" secondAttribute="bottom" id="bVS-Yg-Mdr"/>
+                <constraint firstItem="Yy1-Kb-Z8t" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="hg3-Aq-V6G"/>
+                <constraint firstAttribute="trailing" secondItem="Yy1-Kb-Z8t" secondAttribute="trailing" id="sVs-bH-yO8"/>
+                <constraint firstItem="cfq-9k-yMF" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="srZ-q3-E6g"/>
+            </constraints>
+            <point key="canvasLocation" x="-229.5" y="164.5"/>
+        </customView>
+    </objects>
+</document>

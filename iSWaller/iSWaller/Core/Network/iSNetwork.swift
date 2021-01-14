@@ -61,9 +61,9 @@ import Alamofire
 import Kingfisher
 
 struct iSNetwork {
-    enum Order: Int {
-        case latest
-        case popular
+    enum Order: String {
+        case latest = "lastest"
+        case popular = "popular"
     }
     
     private static var downloadTask: DownloadTask?

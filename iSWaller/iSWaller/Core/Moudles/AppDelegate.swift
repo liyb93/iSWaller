@@ -73,6 +73,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } else {
             statusItem.image = icon
         }
+        statusItem.menu = menu
         statusItem.button?.target = self
         statusItem.button?.action = #selector(openMainMenu(_:))
         statusItem.button?.sendAction(on: [.leftMouseDown, .rightMouseDown])

@@ -38,7 +38,15 @@ class iSCategoryView: NSView {
     
     private var oldTransform: CATransform3D? = CATransform3DIdentity
     weak var delegate: iSCategoryViewDelegate?
-    private(set) var selectedIndex: Int = 0
+    var selectedIndex: Int = 0 {
+        didSet {
+            if selectedIndex == 1 {
+                popularDidClickAction(popularButton)
+            } else {
+                newDidClickAction(newButton)
+            }
+        }
+    }
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -79,7 +87,6 @@ class iSCategoryView: NSView {
         popularButton.setTitleColor(.init(0xA1A1A1))
         lineView.translationAnimation(oldTransform, to: CATransform3DIdentity, duration: 0.3)
         oldTransform = CATransform3DIdentity
-        selectedIndex = 0
         delegate?.categoryView(self, didSelectItemAt: 0)
     }
     
@@ -89,7 +96,6 @@ class iSCategoryView: NSView {
         let to = CATransform3DMakeTranslation(sender.left, 0, 0)
         lineView.translationAnimation(oldTransform, to: to, duration: 0.3)
         oldTransform = to
-        selectedIndex = 1
         delegate?.categoryView(self, didSelectItemAt: 1)
     }
 }

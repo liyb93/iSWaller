@@ -11,6 +11,7 @@ target 'iSWaller' do
   pod 'HandyJSON'
   pod 'FMDB'
   pod 'MASShortcut'
+  pod 'LYBProgressHUD'
   
   # Pods for iSWaller
 

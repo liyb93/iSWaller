@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA01237425B00E8C001B8564 /* iSImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01237225B00E8C001B8564 /* iSImageController.swift */; };
+		EA01237525B00E8C001B8564 /* iSImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA01237325B00E8C001B8564 /* iSImageController.xib */; };
+		EA01237A25B00FD0001B8564 /* iSPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01237825B00FD0001B8564 /* iSPageController.swift */; };
+		EA01237B25B00FD0001B8564 /* iSPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA01237925B00FD0001B8564 /* iSPageController.xib */; };
 		EA084B8C24AB16F400BAD17E /* iSGalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA084B8A24AB16F400BAD17E /* iSGalleryController.swift */; };
 		EA084B8D24AB16F400BAD17E /* iSGalleryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA084B8B24AB16F400BAD17E /* iSGalleryController.xib */; };
 		EA084BBE24AB308D00BAD17E /* iSDownloadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA084BBC24AB308D00BAD17E /* iSDownloadController.swift */; };
@@ -45,7 +49,6 @@
 		EA60E89D24AF21BC00AACC7C /* String+iSWaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA60E89C24AF21BC00AACC7C /* String+iSWaller.swift */; };
 		EA60E89F24AF21F400AACC7C /* iSCacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA60E89E24AF21F400AACC7C /* iSCacheHelper.swift */; };
 		EA60E8A124AF345E00AACC7C /* NSImage+iSWaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA60E8A024AF345E00AACC7C /* NSImage+iSWaller.swift */; };
-		EA9BB7A524C6E54D0026C048 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9BB7A324C6E54D0026C048 /* MBProgressHUD.m */; };
 		EAAB51AB24AC32A4003710F0 /* iSNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB51AA24AC32A4003710F0 /* iSNavigationBar.swift */; };
 		EAAB51AD24AC3B68003710F0 /* NSControl+iSWaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB51AC24AC3B68003710F0 /* NSControl+iSWaller.swift */; };
 		EAAB51AF24AC510B003710F0 /* NSButton+iSWaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB51AE24AC510B003710F0 /* NSButton+iSWaller.swift */; };
@@ -141,6 +144,10 @@
 /* Begin PBXFileReference section */
 		0D839D2002310B1047742043 /* Pods_iSWaller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iSWaller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74342A918FC8919F6D6DA664 /* Pods-iSWaller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSWaller.release.xcconfig"; path = "Target Support Files/Pods-iSWaller/Pods-iSWaller.release.xcconfig"; sourceTree = "<group>"; };
+		EA01237225B00E8C001B8564 /* iSImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSImageController.swift; sourceTree = "<group>"; };
+		EA01237325B00E8C001B8564 /* iSImageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = iSImageController.xib; sourceTree = "<group>"; };
+		EA01237825B00FD0001B8564 /* iSPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSPageController.swift; sourceTree = "<group>"; };
+		EA01237925B00FD0001B8564 /* iSPageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = iSPageController.xib; sourceTree = "<group>"; };
 		EA084B8A24AB16F400BAD17E /* iSGalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSGalleryController.swift; sourceTree = "<group>"; };
 		EA084B8B24AB16F400BAD17E /* iSGalleryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = iSGalleryController.xib; sourceTree = "<group>"; };
 		EA084BBC24AB308D00BAD17E /* iSDownloadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSDownloadController.swift; sourceTree = "<group>"; };
@@ -182,8 +189,6 @@
 		EA60E89C24AF21BC00AACC7C /* String+iSWaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+iSWaller.swift"; sourceTree = "<group>"; };
 		EA60E89E24AF21F400AACC7C /* iSCacheHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iSCacheHelper.swift; sourceTree = "<group>"; };
 		EA60E8A024AF345E00AACC7C /* NSImage+iSWaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+iSWaller.swift"; sourceTree = "<group>"; };
-		EA9BB7A324C6E54D0026C048 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		EA9BB7A424C6E54D0026C048 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		EAAB51AA24AC32A4003710F0 /* iSNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSNavigationBar.swift; sourceTree = "<group>"; };
 		EAAB51AC24AC3B68003710F0 /* NSControl+iSWaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSControl+iSWaller.swift"; sourceTree = "<group>"; };
 		EAAB51AE24AC510B003710F0 /* NSButton+iSWaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSButton+iSWaller.swift"; sourceTree = "<group>"; };
@@ -206,7 +211,6 @@
 		EAC7C71524B218D8003C9BB5 /* iSWallerHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iSWallerHelper.entitlements; sourceTree = "<group>"; };
 		EACDA0482501E36600C1C489 /* iSCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSCategoryView.swift; sourceTree = "<group>"; };
 		EACDA04A2502152800C1C489 /* Dictionary+iSWaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+iSWaller.swift"; sourceTree = "<group>"; };
-		EAD51CDD24AF800200ADD22B /* iSWaller-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iSWaller-Bridging-Header.h"; sourceTree = "<group>"; };
 		EAD51CE124AF83B500ADD22B /* iSHUDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSHUDManager.swift; sourceTree = "<group>"; };
 		EAE0838F24B6DCC1009910F9 /* iSDownloadSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSDownloadSelectView.swift; sourceTree = "<group>"; };
 		EAE100D4250A3FF300DBBD67 /* iSColorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSColorItem.swift; sourceTree = "<group>"; };
@@ -259,6 +263,10 @@
 			children = (
 				EA084B8A24AB16F400BAD17E /* iSGalleryController.swift */,
 				EA084B8B24AB16F400BAD17E /* iSGalleryController.xib */,
+				EA01237225B00E8C001B8564 /* iSImageController.swift */,
+				EA01237325B00E8C001B8564 /* iSImageController.xib */,
+				EA01237825B00FD0001B8564 /* iSPageController.swift */,
+				EA01237925B00FD0001B8564 /* iSPageController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -456,7 +464,6 @@
 		EA15AE25248E48A200191A5B /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				EAD51CDD24AF800200ADD22B /* iSWaller-Bridging-Header.h */,
 				EA15AE19248E489800191A5B /* Assets.xcassets */,
 				EA15AE1B248E489800191A5B /* Main.storyboard */,
 				EA15AE1E248E489800191A5B /* Info.plist */,
@@ -558,15 +565,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		EA9BB7A224C6E54D0026C048 /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				EA9BB7A324C6E54D0026C048 /* MBProgressHUD.m */,
-				EA9BB7A424C6E54D0026C048 /* MBProgressHUD.h */,
-			);
-			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
 		EAAB51B524AC61E8003710F0 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -626,7 +624,6 @@
 		EAD51CDC24AF7FF800ADD22B /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				EA9BB7A224C6E54D0026C048 /* MBProgressHUD */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -733,6 +730,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA084BCF24AB3BE700BAD17E /* iSSettingController.xib in Resources */,
+				EA01237525B00E8C001B8564 /* iSImageController.xib in Resources */,
 				EA2F527C24BEC66D007EEC45 /* iSSettingSelectedItem.xib in Resources */,
 				EA2F528024BEC682007EEC45 /* iSSettingChooseItem.xib in Resources */,
 				EA15AE1A248E489800191A5B /* Assets.xcassets in Resources */,
@@ -747,6 +745,7 @@
 				EA2F528824BEC6C1007EEC45 /* iSSettingConfigItem.xib in Resources */,
 				EA2F528424BEC69F007EEC45 /* iSSettingChangeItem.xib in Resources */,
 				EA2F528C24BEC6D2007EEC45 /* iSSettingActionItem.xib in Resources */,
+				EA01237B25B00FD0001B8564 /* iSPageController.xib in Resources */,
 				EA084BBF24AB308D00BAD17E /* iSDownloadController.xib in Resources */,
 				EA084BDB24AB3C1800BAD17E /* iSSearchController.xib in Resources */,
 				EAC1603F2514B84B00C47E57 /* iSColorController.xib in Resources */,
@@ -837,7 +836,8 @@
 				EAAB51B124AC52B5003710F0 /* NSColor+iSWaller.swift in Sources */,
 				EA60E88724AEDF3A00AACC7C /* iSGalleryModel.swift in Sources */,
 				EA0AF85924B5C72B0056EDE6 /* Date+iSWaller.swift in Sources */,
-				EA9BB7A524C6E54D0026C048 /* MBProgressHUD.m in Sources */,
+				EA01237425B00E8C001B8564 /* iSImageController.swift in Sources */,
+				EA01237A25B00FD0001B8564 /* iSPageController.swift in Sources */,
 				EAC7C6DF24B051A0003C9BB5 /* iSDownloadItem.swift in Sources */,
 				EA084BE224AB3EB100BAD17E /* iSAboutController.swift in Sources */,
 				EAE100D6250A3FF300DBBD67 /* iSColorItem.swift in Sources */,
@@ -1074,7 +1074,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.liyb.iSWaller;
 				PRODUCT_NAME = iSWaller;
-				SWIFT_OBJC_BRIDGING_HEADER = "iSWaller/SupportingFiles/iSWaller-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1103,7 +1103,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.liyb.iSWaller;
 				PRODUCT_NAME = iSWaller;
-				SWIFT_OBJC_BRIDGING_HEADER = "iSWaller/SupportingFiles/iSWaller-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

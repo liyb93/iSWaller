@@ -128,11 +128,11 @@ extension iSDownloadController: iSDownloadItemDelegate {
                     selectDataSource.removeAll(where: {$0==data})
                 }
             } else {
-                MBProgressHUD.showAdded(to: view, animated: true)
+                iSHUDManager.show(to: view)
                 iSDataManager.shared.remove([data]) { [unowned self] in
                     self.hideSelectView()
                     self.requestData()
-                    MBProgressHUD.hide(for: self.view, animated: true)
+                    iSHUDManager.hide(to: self.view)
                 }
             }
         }
@@ -156,11 +156,11 @@ extension iSDownloadController: iSDownloadItemDelegate {
 
 extension iSDownloadController: iSDownloadSelectViewDelegate {
     func downloadSelectView(didClickDelete selectView: iSDownloadSelectView) {
-        MBProgressHUD.showAdded(to: view, animated: true)
+        iSHUDManager.show(to: view)
         iSDataManager.shared.remove(selectDataSource) { [unowned self] in
             self.hideSelectView()
             self.requestData()
-            MBProgressHUD.hide(for: self.view, animated: true)
+            iSHUDManager.hide(to: self.view)
         }
     }
     
